@@ -5,23 +5,23 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@app.route('/Obstacles')
+@app.route('/obstacles')
 def obstacles():
     return render_template('obstacles.html')
 
-@app.route('/Identification')
+@app.route('/identification')
 def identification():
     return render_template('identification.html')
 
-@app.route('/Types')
+@app.route('/types')
 def types():
     return render_template('types.html')
 
-@app.route('/Weaknesses')
+@app.route('/weaknesses')
 def weaknesses():
     return render_template('weaknesses.html')
 
-@app.route('/Solutions')
+@app.route('/solutions')
 def solutions():
     return render_template('solutions.html')
 
@@ -29,8 +29,8 @@ def solutions():
 if __name__ == "__main__":
     app.run(debug=True)
 
-#What To Do If Can't Push Changes Right Away:
-#cd data-poison-website
+#What To Do:
+#cd poison-web
 #git add .
 #git commit -m ""
 #git pull

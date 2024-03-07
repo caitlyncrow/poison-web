@@ -1,49 +1,44 @@
-<!-- templates/base.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Data Poisoning Website{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <title>Data Poisoning Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <header>
-        <h1>Data Poisoning</h1>
-    </header>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/Obstacles">Obstacles</a>
-        <a href="/Identification">Identification</a>
-        <a href="/Types">Types</a>
-        <a href="/Weaknesses">Weaknesses</a>
-        <a href="/Solutions">Solutions</a>
-    </nav>
-    <section>
-        {% block content %}{% endblock %}
-    </section>
+
+<div class="container mt-5">
+    <ul class="nav nav-tabs" id="myTabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ url_for('obstacles') }}">Obstacles</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('identification') }}">Identification</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('types') }}">Types</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('weaknesses') }}">Weaknesses</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('solutions') }}">Solutions</a>
+        </li>
+    </ul>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#myTabs a').on('click', function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+    });
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
