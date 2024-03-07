@@ -5,16 +5,31 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+@app.route('/Obstacles')
+def obstacles():
+    return render_template('obstacles.html')
+
+@app.route('/Identification')
+def identification():
+    return render_template('identification.html')
+
+@app.route('/Types')
+def types():
+    return render_template('types.html')
+
+@app.route('/Weaknesses')
+def weaknesses():
+    return render_template('weaknesses.html')
+
+@app.route('/Solutions')
+def solutions():
+    return render_template('solutions.html')
+
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 #What To Do If Can't Push Changes Right Away:
 #cd data-poison-website
 #git pull
 #git push
-    
-def hello():
-    return 0
-
-def hello2():
-    return 1

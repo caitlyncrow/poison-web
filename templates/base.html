@@ -1,0 +1,49 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Data Poisoning Website{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Data Poisoning</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/Obstacles">Obstacles</a>
+        <a href="/Identification">Identification</a>
+        <a href="/Types">Types</a>
+        <a href="/Weaknesses">Weaknesses</a>
+        <a href="/Solutions">Solutions</a>
+    </nav>
+    <section>
+        {% block content %}{% endblock %}
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
