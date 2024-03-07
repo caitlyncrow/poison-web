@@ -31,5 +31,7 @@ if __name__ == "__main__":
 
 #What To Do If Can't Push Changes Right Away:
 #cd data-poison-website
+#git add .
+#git commit -m ""
 #git pull
 #git push
