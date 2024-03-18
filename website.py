@@ -11,8 +11,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('base.html')
 
+'''
 @app.route('/obstacles')
 def obstacles():
     return render_template('obstacles.html')
@@ -32,10 +33,12 @@ def weaknesses():
 @app.route('/solutions')
 def solutions():
     return render_template('solutions.html')
+'''
 
 
 if __name__ == "__main__":
     app.run(debug=True) 
+
 
 #What To Do:
 #cd poison-web
