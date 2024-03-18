@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="static/base.js" defer></script>  <!--references the javascript file that navigates to the appropriate pages once
-    a given tab is clicked-->
     <title>Navigation Bar</title>
-    <link rel="stylesheet" href="static/base.css">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" />
 </head>
 <body>
     <ul class="tabs">
@@ -40,6 +38,10 @@
             <h1>Possible Solutions to Address Data Poisoning</h1>
         </div>
     </div>
+
+    <script src="{{ url_for('static', filename='base.js') }}" defer></script>
+    <!--references the javascript file that navigates to the appropriate pages once
+    a given tab is clicked-->
     
 </body>
 </html>
