@@ -3,42 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Poisoning Website</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="static/base.js" defer></script>  <!--references the javascript file that navigates to the appropriate pages once
+    a given tab is clicked-->
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="static/base.css">
 </head>
 <body>
-
-<div class="container mt-5">
-    <ul class="nav nav-tabs" id="myTabs">
-        <li class="nav-item">
-            <a class="nav-link active" href="{{ url_for('obstacles') }}">Obstacles</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('identification') }}">Identification</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('types') }}">Types</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('weaknesses') }}">Weaknesses</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('solutions') }}">Solutions</a>
-        </li>
+    <ul class="tabs">
+        <li data-tab-target="#home" class="active tab">Home</li>
+        <li data-tab-target="#types" class="tab">Types</li>
+        <li data-tab-target="#identification" class="tab">Identification</li>
+        <li data-tab-target="#obstacles" class="tab">Obstacles</li>
+        <li data-tab-target="#weaknesses" class="tab">Weaknesses</li>
+        <li data-tab-target="#solutions" class="tab">Solutions</li>
     </ul>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('#myTabs a').on('click', function (e) {
-            e.preventDefault()
-            $(this).tab('show')
-        })
-    });
-</script>
-
+    <!--Below code displays the content for the given tab I click on in the navigation bar-->
+    <div class="tab-content">
+        <div id="home" data-tab-content class="active">  <!--an active class means it is the default tab-->
+            <h1>Learn more about data poisoning and the ways it can be addressed!</h1>
+            <h2>Explore the tabs to learn more!</h2>
+        </div>
+        <div id="types" data-tab-content>
+            <h1>Types of Data Poisoning</h1>
+        </div>
+        <div id="identification" data-tab-content>
+            <h1>How To Identify Data Poisoning in Large Language Models</h1>
+        </div>
+        <div id="obstacles" data-tab-content>
+            <h1>Obstacles In The Way of Addressing Data Poisoning</h1>
+        </div>
+        <div id="weaknesses" data-tab-content>
+            <h1>Weaknesses in Large Language Models That Make Them Susceptible to Data Poisoning</h1>
+        </div>
+        <div id="solutions" data-tab-content>
+            <h1>Possible Solutions to Address Data Poisoning</h1>
+        </div>
+    </div>
+    
 </body>
 </html>

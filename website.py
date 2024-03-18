@@ -1,9 +1,16 @@
+
+#Sources: 
+#ChatGPT
+#https://youtu.be/5L6h_MrNvsk?si=4uDbgWpGHCEpTEEG
+
+#Issue: The base.css file is not being applied to the base.html file.
+
 from flask import Flask, redirect, url_for, render_template, request
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('base.html')
 
 @app.route('/obstacles')
 def obstacles():
