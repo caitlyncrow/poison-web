@@ -31,9 +31,31 @@
         </div>
         <div id="types" data-tab-content>
             <h1>Types of Data Poisoning</h1>
-        </div>
+                <p>There are four main types of data poisoning attacks, which are Availability Attacks, Backdoor Attacks, Targeted Attacks, and Subpopulation Attacks.</p>
+            <h2>Availability Attack</h2>
+                <p> The entire model gets corrupted, which means that there is an increase in the number of false negatives and false positives for the predictions.</p>
+            <h2>Backdoor Attack</h2>
+                <p>The model gets introduced to several examples that cause it to misclassify the predictions from the training data, which results in the model being corrupted. In order for the attacker to decide on which examples to use, they hack into the model’s information, such as its training data. Unlike an Availability Attack, a Backdoor Attack is purposeful in deciding which data samples to poison, whereas an Availability Attack may involve poisoning randomized data samples without necessarily having knowledge of the actual data.</p>
+            <h2>Targeted Attack</h2>
+            <!--add link to below paragraph-->
+                <p>The model accurately classifies most of the training data, but there are a few examples that get misclassified. Because of this, a Targeted Attack can be deceiving and especially hard to detect. Just like a Backdoor Attack, a Targeted Attack is purposeful in deciding which data samples to poison. However, a Targeted Attack goes a step further by poisoning data in such a way so that the model conveys information the attacker wants.</p>
+            <h2>Subpopulation Attack</h2>
+                <p>The model undergoes a Targeted Attack, but in addition to affecting those few examples, this attack also affects similar examples.</p>
+            <h2>The “Dirty Neighbor” Attack</h2>
+            <!--add link to below paragraph-->
+                <p>This attack takes particular advantage of the relationship between semantic frequency and concept sparsity (refer to the tab Weaknesses for more information). This attack works by selecting a concept that is the complete opposite or unrelated, and poisons the semantic “neighbors” of this opposite concept to be semantically similar to the original. This way, antonyms become synonyms and the predictions become nonsensical. This method is highly effective and requires only a small number of poisoning samples to be detrimental to the model.</p>
+
+            </div>
+
         <div id="identification" data-tab-content>
             <h1>How To Identify Data Poisoning in Large Language Models</h1>
+            <h2>What does poisoned data look like?</h2>
+                <p> Data poisoning adds another level of difficulty in filtering out bad data. After all, it wouldn’t be very effective if they were easy to identify. Even evaluating the performance of a model is not very effective in determining if the model has been poisoned, much less identifying the offending samples. This is in part because there is no base performance standard for every model domain and dataset type. This is especially true for large language models. It is no simple task to quantify the performance of language output. The performance quantifiers are only useful in comparison with the quantifiers of the same model. </p>
+            <h2>Challenges</h2>
+                <p>Data poisoning attacks can be pretty simple to implement, because they don’t always need access to the image generation pipeline, large data samples, or knowledge of how the model is trained in order for them to be successful.</p>
+                <p> Oftentimes, it is challenging to determine if an LLM model has a data poisoning attack, since it’s hard to evaluate its performance. This is because there is not one way to measure a model’s performance; the model’s performance 
+                    can be evaluated in different ways. For instance, one way a model’s performance can be measured is using the PCA method. The PCA method aims to retain a model’s accuracy using the fewest variables possible. The few variables that are left are the ones with the lowest variance, which indicates that they have the more significant role in affecting a model’s predictions and ultimately affecting a model’s performance. </p>
+                <p>A model’s performance can also be hard to evaluate because of the sheer amount of data a model needs to use. Since models rely on so much data for making predictions, it becomes challenging to maintain quality control of the model, thereby making it challenging to evaluate its performance. Additionally, a lot of that data gets scraped from the Internet, further making it hard to maintain and ensure the data is used for the right purposes.</p>
         </div>
         <div id="obstacles" data-tab-content>
             <h1>Obstacles In The Way of Addressing Data Poisoning</h1>
