@@ -59,39 +59,196 @@
             </p>
         </div>
         <div id="types" data-tab-content>
-            <h1>Types of Data Poisoning</h1>
-                <p>There are four main types of data poisoning attacks, which are Availability Attacks, Backdoor Attacks, Targeted Attacks, and Subpopulation Attacks.</p>
-            <h2>Availability Attack</h2>
-                <p> The entire model gets corrupted, which means that there is an increase in the number of false negatives and false positives for the predictions.</p>
-            <h2>Backdoor Attack</h2>
-                <p>The model gets introduced to several examples that cause it to misclassify the predictions from the training data, which results in the model being corrupted. In order for the attacker to decide on which examples to use, they hack into the model’s information, such as its training data. Unlike an Availability Attack, a Backdoor Attack is purposeful in deciding which data samples to poison, whereas an Availability Attack may involve poisoning randomized data samples without necessarily having knowledge of the actual data.</p>
-            <h2>Targeted Attack</h2>
+            <h1>
+                <b>Types of Data Poisoning</b>
+            </h1>
+                <p>There are four main types of data poisoning attacks, 
+                which are Availability Attacks, Backdoor Attacks, Targeted Attacks, Subpopulation Attacks, and 
+                "Dirty Neighbor" Attacks.</p>
+                <br> <br>
+            <h2>
+                <b>Availability Attack</b>
+            </h2>
+                <p>The entire model gets corrupted, which means there is an 
+                increase in the number of false negatives and false positives for the predictions.</p>
+            <br>
+            <h2>
+                <b>Backdoor Attack</b>
+            </h2>
+                <p>The model gets introduced to several examples that cause it to 
+                misclassify the predictions from the training data, which results in the model being corrupted. 
+                In order for the attacker to decide on which examples to use, they hack into the model’s information, 
+                such as its training data. Unlike an Availability Attack, a Backdoor Attack is purposeful in 
+                deciding which data samples to poison, whereas an Availability Attack may involve poisoning randomized data samples 
+                without necessarily having knowledge of the actual data.</p>
+            <br>
+            <h2>
+                <b>Targeted Attack</b>
+            </h2>
             <!--add link to below paragraph-->
-                <p>The model accurately classifies most of the training data, but there are a few examples that get misclassified. Because of this, a Targeted Attack can be deceiving and especially hard to detect. Just like a Backdoor Attack, a Targeted Attack is purposeful in deciding which data samples to poison. However, a Targeted Attack goes a step further by poisoning data in such a way so that the model conveys information the attacker wants.</p>
-            <h2>Subpopulation Attack</h2>
-                <p>The model undergoes a Targeted Attack, but in addition to affecting those few examples, this attack also affects similar examples.</p>
-            <h2>The “Dirty Neighbor” Attack</h2>
+                <p>The model accurately classifies most of the training data, but there are a few examples 
+                that get misclassified. Because of this, a Targeted Attack can be deceiving and especially hard to detect. 
+                Just like a Backdoor Attack, a Targeted Attack is purposeful in deciding which data samples to poison. 
+                However, a Targeted Attack goes a step further by poisoning data in such a way so that the model conveys the exact 
+                information the attacker wants.</p>
+            <br>
+            <h2>
+                <b>Subpopulation Attack</b>
+            </h2>
+                <p>The model undergoes a Targeted Attack, but in addition to affecting those few examples, 
+                this attack also affects examples that are conceptually similar. For example, when talking about an image
+                generation model, the model may produce images of cats as opposed to dogs. However, a Subpopulation
+                Attack may also affect concepts related to "dog", such as "wolf", "puppy", etc.</p>
+            <br>
+            <h2>
+                <b>The “Dirty Neighbor” Attack</b>
+            </h2>
             <!--add link to below paragraph-->
-                <p>This attack takes particular advantage of the relationship between semantic frequency and concept sparsity (refer to the tab Weaknesses for more information). This attack works by selecting a concept that is the complete opposite or unrelated, and poisons the semantic “neighbors” of this opposite concept to be semantically similar to the original. This way, antonyms become synonyms and the predictions become nonsensical. This method is highly effective and requires only a small number of poisoning samples to be detrimental to the model.</p>
+                <p>This attack takes particular advantage of the relationship between semantic frequency and concept sparsity 
+                (refer to the tab <b>Weaknesses</b> for more information). This attack works by selecting a concept that is the 
+                complete opposite or unrelated to the original concept. From there, the attack poisons the semantic “neighbors” 
+                of this opposite or unrelated concept, so that this concept now becomes
+                semantically similar to the original concept. In essence, antonyms now become synonyms, 
+                and the predictions become nonsensical. This method is highly effective and 
+                requires only a small number of poisoning samples to be detrimental to the model.</p>
+            <br>
 
             </div>
 
         <div id="identification" data-tab-content>
-            <h1>How To Identify Data Poisoning in Large Language Models</h1>
-            <h2>What does poisoned data look like?</h2>
-                <p> Data poisoning adds another level of difficulty in filtering out bad data. After all, it wouldn’t be very effective if they were easy to identify. Even evaluating the performance of a model is not very effective in determining if the model has been poisoned, much less identifying the offending samples. This is in part because there is no base performance standard for every model domain and dataset type. This is especially true for large language models. It is no simple task to quantify the performance of language output. The performance quantifiers are only useful in comparison with the quantifiers of the same model. </p>
-            <h2>Challenges</h2>
-                <p>Data poisoning attacks can be pretty simple to implement, because they don’t always need access to the image generation pipeline, large data samples, or knowledge of how the model is trained in order for them to be successful.</p>
-                <p> Oftentimes, it is challenging to determine if an LLM model has a data poisoning attack, since it’s hard to evaluate its performance. This is because there is not one way to measure a model’s performance; the model’s performance 
-                    can be evaluated in different ways. For instance, one way a model’s performance can be measured is using the PCA method. The PCA method aims to retain a model’s accuracy using the fewest variables possible. The few variables that are left are the ones with the lowest variance, which indicates that they have the more significant role in affecting a model’s predictions and ultimately affecting a model’s performance. </p>
-                <p>A model’s performance can also be hard to evaluate because of the sheer amount of data a model needs to use. Since models rely on so much data for making predictions, it becomes challenging to maintain quality control of the model, thereby making it challenging to evaluate its performance. Additionally, a lot of that data gets scraped from the Internet, further making it hard to maintain and ensure the data is used for the right purposes.</p>
+            <h1>
+                <b>How To Identify Data Poisoning in Large Language Models</b>
+            </h1>
+            <br> <br>
+            <h2>
+                <b>What does poisoned data look like?</b>
+            </h2>
+                <p> Data poisoning adds another level of difficulty in filtering out bad data. After all, 
+                it wouldn’t be very effective if the bad data was easy to identify. 
+                Even evaluating the performance of a model is not very effective in determining if the model has been poisoned, 
+                much less identifying the offending samples. This is in part because there is no base performance standard 
+                for every model domain and data set type. This is especially true for LLMs. 
+                It is no simple task to quantify the performance of language output. Ultimately, the performance quantifiers are only 
+                useful in comparison with the quantifiers of the same model. </p>
+            <br>
+            <h2>
+                <b>Major Challenges</b>
+            </h2>
+                <p>1. Data poisoning attacks can be pretty simple to implement, because they don’t always need access to the image generation pipeline, 
+                large data samples, or knowledge of how the model is trained in order for them to be successful.</p>
+                <p>2. Oftentimes, it is challenging to determine if an LLM model has a data poisoning attack in the first place, since it’s 
+                hard to evaluate its performance. As previously mentioned in the section <b>What does poisoned data look like?</b>, 
+                there is not one way to measure a model’s performance. Rather, the model’s performance 
+                can be evaluated in different ways. For instance, one way a model’s performance can be measured is using the PCA method.</p>
+                <h3 style="margin-left: 40px">
+                    <b>What is the PCA method?</b>
+                </h3>
+                <p style="margin-left: 40px">The PCA method aims to retain a model’s accuracy using the fewest variables possible. The few variables that are left are the ones with the lowest variance, 
+                which indicates that they have the most significant role compared to the rest of
+                the variables in affecting a model’s predictions and ultimately its performance. </p>
+                <br>
+                <p>Additionally, a model’s performance can be hard to evaluate because of the sheer amount of data the model needs to use. 
+                Since a machine learning model relies on so much data for making predictions, it becomes challenging to maintain quality control 
+                of the model, thereby making it challenging to evaluate its performance.
+                Furthermore, a lot of that data gets scraped from the Internet, making it hard to maintain and ensure the data is used 
+                for the right purposes.</p>
         </div>
         <div id="obstacles" data-tab-content>
             <h1>Obstacles In The Way of Addressing Data Poisoning</h1>
         </div>
         <div id="weaknesses" data-tab-content>
-            <h1>Weaknesses in Large Language Models That Make Them Susceptible to Data Poisoning</h1>
-        </div>
+            <h1>
+                <b>Understanding What Can Make an Large Language Model (LLM) Susceptible to Data Poisoning</b>
+            </h1>
+            <br>
+            <h2>
+                <b>Failed vs. Successful Models</b>
+            </h2>
+            <h3 style="margin-left: 40px">
+                <b>Failed Model</b>
+            </h3>
+            <p style="margin-left: 40px">A major failure was an LLM model produced by Microsoft called Tay. Its failure is said to be
+            mainly influenced from the way the model was trained. In essence, Tay was trained by generating responses to various
+            questions it was asked. For every response it generated, Tay mapped the generated responses to their corresponding
+            questions as well as questions that were semantically similar.</p>
+            <h4 style="margin-left: 80px">
+                <b>What is Meant by Semantically Similar?</b>
+            </h4>
+            <p style="margin-left: 80px">Let's consider the question "What is your name?". The question "What is your name?"
+            can be asked in a variety of ways, such as "Who are you?", "What do you go by?", etc. The responses to these
+            questions are generally going to be the same. For instance, the response "My name is Sam" or "I'm Sam" can work
+            for each of these questions. Since all the questions are similar to one another and produce pretty much the same
+            responses, these questions are therefore said to be semantically similar.</p>
+            <p style="margin-left: 40px">Even though Tay was trained in an effective manner, a major issue was that
+            two key parameters weren't specified: Type and Frequency. Specifically, the model mapped questions to responses
+            too broadly. Due to its lack of constraints that would be indicated by the parameters, the model became subject
+            to Targeted Attacks (refer to the tab <b>Types</b> for more detail). Ultimately, this made the model vulnerable
+            to inappropriate and offensive responses directed by users with malicious intent.</p>
+            <h3 style="margin-left: 40px">
+                <b>Model Training Parameters</b>
+            </h3>
+            <h4 style="margin-left: 80px">
+                <b>Type</b>
+            </h4>
+            <p style="margin-left: 80px">This parameter specifies the type of input the model
+            receives (i.e. the type of questions Tay gets asked in this case).</p>
+            <h4 style="margin-left: 80px">
+                <b>Frequency</b>
+            </h4>
+            <p style="margin-left: 80px">This parameter specifies how often the model receives various types
+            of input (i.e. how often Tay gets asked certain types of questions).</p>
+            <p style="margin-left: 40px">These parameters can be the key to mitigating Data Poisoning attacks,
+            as placing constraints on the type and frequency of the input the model receives can help filter out the attacks.
+            For instance, if the model was designed to only accept input that doesn't include remarks that are deemed offensive, 
+            then any input that included offensive remarks would be considered as outliers. This is discussed in greater
+            detail in the <b>Solutions</b> tab, but determining outliers can help filter out poisoned data samples, since
+            the poisoned data samples will "stand out" from the "normal" data samples.</p>
+        <br>
+        <h3 style="margin-left: 40px">
+            <b>Successful Model</b>
+        </h3>
+        <p style="margin-left: 40px">Unlike Tay, the model known as XiaoIce was much more successful in its design.
+        Its success mainly has to do with the model taking into account the context and the use of language when 
+        producing responses to the questions it gets asked. In essence, the design of XiaoIce takes in components
+        of EQ in addition to IQ. Most machine learning models only focus on IQ, which models the concept of memory and
+        the ability to "learn" by making sense out of prior knowledge. However, it's the EQ that takes into account
+        the context and use of language.</p>
+        <h3 style="margin-left: 40px">
+            <b>Specific Design Components of XiaoIce</b>
+        </h3>
+        <h4 style="margin-left: 80px">
+            <b>Emotion</b>
+        </h4>
+        <p style="margin-left: 80px">On top of the data associated with the questions it receives from
+        the user, XiaoIce also gets pre-trained on data pertaining to common human emotions. This is to ensure that
+        XiaoIce is able to recognize those emotions and similar ones to them when being trained.</p>
+        <h4 style="margin-left: 80px">
+            <b>Context</b>
+        </h4>
+        <p style="margin-left: 80px">In order to train on common human emotions as well as questions it may be
+        asked, the model uses various querying techniques such as Markov Decision Processes to filter out all
+        the possible emotions a given person is experiencing based on their use of language.</p>
+        <br>
+        <h3 style="margin-left: 40px">
+            <b>What are Markov Decision Processes?</b>
+        </h3>
+        <p style="margin-left: 40px">Markov Decision Processes are a means for a machine learning model to
+        determine the possible next states that can occur based on the current state and previous states
+        that occurred. In the case of XiaoIce, the states represent the various words provided as input
+        for which emotions are predicted. Therefore, the current state would be the current word
+        for which XiaoIce is making a prediction and the previous states would be the words XiaoIce
+        already took as input to make predictions. Meanwhile, the future states would be the possible emotions
+        that can be associated with the next remaining words in the input given the emotions predicted from the
+        previous words. The fewer remaining words there are left in the input, the more constrained (i.e. queried)
+        the possible emotions are. Eventually, this results in possible emotion being left, which is used to
+        predict the entire output. By using query techniques such as Markov Decision Processes, XiaoIce is able
+        to determine the context as well as the emotional level of that given conversation and thereby
+        offer an appropriate response.</p>
+        <br>
+        <p style="margin-left: 40px">By taking emotion and ultimately context into account, XiaoIce is able
+        to significantly reduce the occurrence of inappropriate and offensive responses, as they
+        are responses that are typically not viewed positively by the user.</p>
+    </div>
         <div id="solutions" data-tab-content>
             <h1>Possible Solutions to Address Data Poisoning</h1>
         </div>
