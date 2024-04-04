@@ -219,38 +219,94 @@
         <h4 style="margin-left: 80px">
             <b>Emotion</b>
         </h4>
-        <p style="margin-left: 80px">On top of the data associated with the questions it receives from
-        the user, XiaoIce also gets pre-trained on data pertaining to common human emotions. This is to ensure that
-        XiaoIce is able to recognize those emotions and similar ones to them when being trained.</p>
+            <p style="margin-left: 80px">On top of the data associated with the questions it receives from
+            the user, XiaoIce also gets pre-trained on data pertaining to common human emotions. This is to ensure that
+            XiaoIce is able to recognize those emotions and similar ones to them when being trained.</p>
         <h4 style="margin-left: 80px">
             <b>Context</b>
         </h4>
-        <p style="margin-left: 80px">In order to train on common human emotions as well as questions it may be
-        asked, the model uses various querying techniques such as Markov Decision Processes to filter out all
-        the possible emotions a given person is experiencing based on their use of language.</p>
+            <p style="margin-left: 80px">In order to train on common human emotions as well as questions it may be
+            asked, the model uses various querying techniques such as Markov Decision Processes to filter out all
+            the possible emotions a given person is experiencing based on their use of language.</p>
         <br>
         <h3 style="margin-left: 40px">
             <b>What are Markov Decision Processes?</b>
         </h3>
-        <p style="margin-left: 40px">Markov Decision Processes are a means for a machine learning model to
-        determine the possible next states that can occur based on the current state and previous states
-        that occurred. In the case of XiaoIce, the states represent the various words provided as input
-        for which emotions are predicted. Therefore, the current state would be the current word
-        for which XiaoIce is making a prediction and the previous states would be the words XiaoIce
-        already took as input to make predictions. Meanwhile, the future states would be the possible emotions
-        that can be associated with the next remaining words in the input given the emotions predicted from the
-        previous words. The fewer remaining words there are left in the input, the more constrained (i.e. queried)
-        the possible emotions are. Eventually, this results in possible emotion being left, which is used to
-        predict the entire output. By using query techniques such as Markov Decision Processes, XiaoIce is able
-        to determine the context as well as the emotional level of that given conversation and thereby
-        offer an appropriate response.</p>
+            <p style="margin-left: 40px">Markov Decision Processes are a means for a machine learning model to
+            determine the possible next states that can occur based on the current state and previous states
+            that occurred. In the case of XiaoIce, the states represent the various words provided as input
+            for which emotions are predicted. Therefore, the current state would be the current word
+            for which XiaoIce is making a prediction and the previous states would be the words XiaoIce
+            already took as input to make predictions. Meanwhile, the future states would be the possible emotions
+            that can be associated with the next remaining words in the input given the emotions predicted from the
+            previous words. The fewer remaining words there are left in the input, the more constrained (i.e. queried)
+            the possible emotions are. Eventually, this results in possible emotion being left, which is used to
+            predict the entire output. By using query techniques such as Markov Decision Processes, XiaoIce is able
+            to determine the context as well as the emotional level of that given conversation and thereby
+            offer an appropriate response.</p>
         <br>
-        <p style="margin-left: 40px">By taking emotion and ultimately context into account, XiaoIce is able
-        to significantly reduce the occurrence of inappropriate and offensive responses, as they
-        are responses that are typically not viewed positively by the user.</p>
+            <p style="margin-left: 40px">By taking emotion and ultimately context into account, XiaoIce is able
+            to significantly reduce the occurrence of inappropriate and offensive responses, as they
+            are responses that are typically not viewed positively by the user.</p>
     </div>
         <div id="solutions" data-tab-content>
             <h1>Possible Solutions to Address Data Poisoning</h1>
+            <br>
+            <h2>Improving with Sparsity</h2>
+            <br>
+                <!-- add link to bolded backdoor attack to link to types page-->
+            <p style ="margin-left: 40px; margin-right: 40px">
+                Concept sparsity can be used in a very similar way as adversarial attacks to create a better model. <b>Backdoor attacks </b> can be used to identify the frequency of concepts within a dataset to then target those with lower frequency. 
+                This same concept can be used to identify weaknesses in data and provide opportunities to improve the models organization of such data. In this way, the model can improve its accuracy without requiring a substantial increase in computing
+                 power. Furthermore, unstructured sparsity is a technique used within the structure of the model by keeping certain weights at zero, which essentially prunes the connections within the model. This is particularly useful in increasing the model’s accuracy.</p>
+                <!-- add link here -->
+            <p style ="margin-left: 40px">More information about using sparsity to identify bad data can be found in the Weakness tab under the Weaknesses Caused by Data heading. If you haven’t already, read that section for an introduction to concept sparsity.</p>
+            <br>
+            <h2>Alternative Training Techniques</h2>
+            <br>
+            <h3 style="margin-left: 40px">Distillation</h3>
+                <p style = "margin-left: 80px; margin-right: 80px">Distillation involves training a model, not on data, but on another model. This “teacher” model tends to be larger and more generic than the “student” model which tends to resemble a fine-tuned model in its narrow scope. 
+                The teacher model is trained using normal techniques and a generic dataset and the student model is trained on the outputs of the teacher model with an additional context-appropriate dataset. This student model uses less computational power while 
+                maintaining its accuracy. It’s near impervious to data poisoning because its goal is not to make accurate predictions but to mimic the functionality of the teacher model. While this is a powerful technique, it is important to note that the resulting 
+                model is smaller in scope and functionality than the large generic teacher model. It may result in accurate predictions using a fraction of memory, but it is not powerful enough to build a model to rival something like chatGPT.</p>
+            <br>
+            <h3 style="margin-left: 40px">In-Context Learning (ILC)</h3>
+                <p style = "margin-left: 80px; margin-right: 80px">In-context learning, or ILC, utilizes information given in the prompt to give additional context to the model. This additional context, assuming it is appropriately given, is one way users can get more accurate results from LLMs;
+                 even if the model has been poisoned. It works by giving the model additional context or information on the topic the prompt is addressing. This can look like giving examples of the information you want, for example, “Grass is green, bark is brown, the sky is…”. 
+                 It can also appear as directing the model to “take it step by step”. For example, LLMs are designed for language, not arithmetic. Often these models, when prompted directly to solve simple arithmetic, fail miserably. However, by asking the model to write out its
+                  process in detail (or “step-by-step”!) this kind of “zero-shot” reasoning has been proven to help the same model correctly respond to the same question it would have otherwise gotten wrong.</p>
+            <br>
+            <h3 style="margin-left: 40px">Adversarial Training</h3>
+                <p style = "margin-left: 80px; margin-right: 80px">Adversarial training is another way data poisoning can be used to build a more robust and resilient model. This type of training involves purposefully adding bad data or changing the reward feedback in an effort to fool the model into 
+                making incorrect predictions. This may sound counterproductive at first, but this technique allows model architects to identify weak points in the model and update parameters. Likewise, training the model to identify and handle bad data can make it more difficult 
+                for the model to be affected by adversarial attacks or data poisoning later on. However, adversarial training is expensive because it requires a lot of data and computing power. In some cases, this training technique can reduce accuracy due to the tendency of these 
+                models to become overfitted. However, there is a similar technique that doesn’t have these weak points.</p>
+            <br>
+            <h3 style="margin-left: 40px">Adversarial Augmentation</h3>
+                <p style = "margin-left: 80px; margin-right: 80px"> Adversarial augmentation trains the model on augmented data in an effort to teach the model how to identify distorted or harmful data. Augmentation can be used in tandem with adversarial training to reduce overfitting, but only a few such
+                 methods have been found to produce satisfactory results. Models often find “shortcuts” or irrelevant correlations in the data that can reduce accuracy and be taken advantage of by poisoning attacks. Adversarial augmentation reduces the influence of such noise, and 
+                 therefore weakens the efficacy of such attacks. </p>
+            <br>
+           <br>
+            <h2>Outlier Detection For Removing Poisoned Data</h2>
+                <p style="margin-left: 40px; margin-right: 40px">Outlier detection techniques can help in removing poisoned data, since they are effective at filtering various data samples, such as poisoned data samples. This is because outliers are data values that are outside of “normal behaviors”, making them clearly identifiable due to them standing out from the rest of the data.</p>
+            <br>
+            <h3 style="margin-left: 40px">Z-Score</h3>
+                <p style="margin-left: 80px; margin-right: 80px">The z-score is a common technique used for detecting outliers. Specifically, the z-score measures the number of standard deviations a particular data point is away from the median pertaining to all the data. If there are 3 or more standard deviations for a given data point,
+                     then that data point is an outlier. The quantity of the outliers, as well as the number of standard deviations away can have a significant impact on the performance of an LLM. However, the z-score method is simply one way to detect outliers</p>
+            <br>
+            <h3 style="margin-left: 40px">Local Outlier Factor</h3>
+                <p style="margin-left: 80px; margin-right: 80px">Another common method used for detecting outliers in more complex and larger data is known as the Local Outlier Factor. The Local Outlier Factor is used to measure the density deviation of a given data sample compared to its neighboring data samples. Density refers to the number of points a
+                     data sample contains. In essence, the data sample can be thought of as a cluster; the more compact the cluster, the higher the density. In order to determine the density deviation, it’s typical to use the K-Nearest Neighbors machine learning algorithm to determine the nearest sample neighbors of a given data sample.
+                      If the given sample has a low density but the neighboring samples have high densities, then that means the given sample has a high density deviation; a high density deviation indicates the presence of outliers in the data sample.</p>
+            <br>
+            <h2>Defenses Against Poisoned Data</h2>
+            <!-- add link -->
+                <p style="margin-left: 80px; margin-right: 80px">The defenses against data poisoning tend to be reactionary. There are no well-developed methods for consistently identifying poisoned data within the training data or the model. However, there are plenty of identification and pruning techniques to handle the poisoned data that has already been introduced. We explore the techniques in depth in the <b>Identification</b> tab.</p>
+ 
+            <br>
+            <br>
+
         </div>
         <div id="citations" data-tab-content>
             <h1>References</h1>
