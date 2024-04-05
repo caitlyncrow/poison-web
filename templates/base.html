@@ -12,7 +12,6 @@
         <li data-tab-target="#about" class="tab">About</li>
         <li data-tab-target="#types" class="tab">Types</li>
         <li data-tab-target="#identification" class="tab">Identification</li>
-        <li data-tab-target="#obstacles" class="tab">Obstacles</li>
         <li data-tab-target="#weaknesses" class="tab">Weaknesses</li>
         <li data-tab-target="#solutions" class="tab">Solutions</li>
         <li data-tab-target="#citations" class="tab">Citations</li>
@@ -153,9 +152,6 @@
                 Furthermore, a lot of that data gets scraped from the Internet, making it hard to maintain and ensure the data is used 
                 for the right purposes.</p>
         </div>
-        <div id="obstacles" data-tab-content>
-            <h1>Obstacles In The Way of Addressing Data Poisoning</h1>
-        </div>
         <div id="weaknesses" data-tab-content>
             <h1>
                 <b>Understanding What Can Make an Large Language Model (LLM) Susceptible to Data Poisoning</b>
@@ -248,48 +244,131 @@
             <p style="margin-left: 40px">By taking emotion and ultimately context into account, XiaoIce is able
             to significantly reduce the occurrence of inappropriate and offensive responses, as they
             are responses that are typically not viewed positively by the user.</p>
+        <br>
+        <h2>
+            <b>Weaknesses Caused By Data</b>
+        </h2>
+        <h3 style="margin-left: 40px">
+            <b>Bad Data</b>
+        </h3>
+        <p style="margin-left: 40px">LLMs, like most modern machine learning models, rely heavily on lots of data.
+        However, these models may not have inherent defense strategies to identify bad data. Data is considered to
+        be bad when it is incorrectly labeled, missing key information, contains irrelevant information, or even
+        considered harmful to the accuracy and performance of the model. Unfortunately, every machine learning model
+        will be trained on some amount of bad data, regardless of whether that data is poisoned. Yet, this is
+        exactly why it's important for a machine learning model to be trained on such vast amounts of data: 
+        having the intention of good, viable data to overpower the bad data.</p>
+        <br>
+        <h3 style="margin-left: 40px">
+            <b>Weak Data</b>
+        </h3>
+        <p style="margin-left: 40px">It's not only bad data that may potentially negatively affect
+        a model's performance. Additionally, weak data is data that provides little use to the model yet
+        can provide an opening for a Data Poisoning attack to exploit the model.
+        A Data Poisoning attack may exploit important features of the model, such as Semantic Frequency
+        and Concept Sparsity.</p>
+        <h4 style="margin-left: 80px">
+            <b>Concept Sparsity</b>
+        </h4>
+        <p style="margin-left: 80px">Concept Sparsity is the idea that particular concepts (e.g. words
+        for which an LLM model is trained on) may have smaller pools, or clusters, to draw from than other concepts
+        in the training data. Since these concepts are in small clusters, they are therefore
+        appealing for data poisoning attacks. This is because ultimately few data samples are needed
+        in order for a Data Poisoning attack to disrupt the model. Once these few data samples become
+        infected, the attack can bleed over to concepts that are semantically similar to those from the small pools.
+        For instance, if the concept "dog" and "puppy" are from one small cluster and they get infected,
+        the attack is also going to negatively affect related concepts, such as "wolf", "bear", etc; this
+        may ultimately corrupt the entire model.</p>
+        <h4 style="margin-left: 80px">
+            <b>Semantic Frequency</b>
+        </h4>
+        <p style="margin-left: 80px">Semantic Frequency is the extent towards which certain concepts
+        are related to each other. This relationship between concepts can be 
+        taken advantage of to further spread the influence of poisoned data. For instance, let's
+        consider a data poisoning attack affects the concept "castle". Any time the model encounters the
+        word "castle" in its training data, it falsely interprets the meaning of "castle" to be closer to
+        "toaster". As a result, the model may cascade into wrong predictions towards concepts 
+        related to "castle", such as "house". Now, the model assumes houses are made of metal and its denizens
+        are bread, which is absurb!</p>
+        <br>
+        <h2>
+            <b>Weaknesses Caused By a Model's Training Structure</b>
+        </h2>
+        <p>As mentioned in the section titled <b>Weaknesses Caused By Bad Data</b>, most machine
+        learning models are trained using vast amounts of data.
+        There are two main types of machine learning models, which are Supervised and Unsupervised
+        machine learning models. The main difference between these two types of models is the use
+        of labeled input in Supervised models, whereas Unsupervised models don't use labels to mark
+        their input. However, regardless of the type of model, they can both be vulnerable
+        to Data Poisoning attacks, because they both have a particular goal in mind (i.e. ability to
+        take in input to make predictions).</p>
+
+
+
     </div>
         <div id="solutions" data-tab-content>
-            <h1>Possible Solutions to Address Data Poisoning</h1>
-            <br>
-            <h2>Improving with Sparsity</h2>
+            <h1>
+                <b>Possible Solutions to Address Data Poisoning</b>
+            </h1>
+            <br> <br>
+            <h2>
+                <b>Improving with Sparsity</b>
+            </h2>
             <br>
                 <!-- add link to bolded backdoor attack to link to types page-->
             <p style ="margin-left: 40px; margin-right: 40px">
-                Concept sparsity can be used in a very similar way as adversarial attacks to create a better model. <b>Backdoor attacks </b> can be used to identify the frequency of concepts within a dataset to then target those with lower frequency. 
-                This same concept can be used to identify weaknesses in data and provide opportunities to improve the models organization of such data. In this way, the model can improve its accuracy without requiring a substantial increase in computing
-                 power. Furthermore, unstructured sparsity is a technique used within the structure of the model by keeping certain weights at zero, which essentially prunes the connections within the model. This is particularly useful in increasing the model’s accuracy.</p>
+                Concept sparsity can be used in a very similar way as adversarial attacks to create a better model. 
+                <b>Backdoor attacks </b> can be used to identify the frequency of concepts within a dataset 
+                to then target those with lower frequency. 
+                This same concept can be used to identify weaknesses in data and provide opportunities to 
+                improve the model's organization of such data. In this way, the model can improve its accuracy without requiring a 
+                substantial increase in computing
+                power. Furthermore, unstructured sparsity is a technique used within the structure of the model by 
+                keeping certain weights at zero, which essentially prunes the connections within the model. 
+                This is particularly useful in increasing the model’s accuracy.</p>
                 <!-- add link here -->
-            <p style ="margin-left: 40px">More information about using sparsity to identify bad data can be found in the Weakness tab under the Weaknesses Caused by Data heading. If you haven’t already, read that section for an introduction to concept sparsity.</p>
+            <p style ="margin-left: 40px">More information about using sparsity to identify bad data can be found in the <b>Weakness</b> 
+            tab under the <b>Weaknesses Caused by Data</b> heading.</p>
             <br>
-            <h2>Alternative Training Techniques</h2>
+            <h2>
+                <b>Alternative Training Techniques</b>
+            </h2>
             <br>
-            <h3 style="margin-left: 40px">Distillation</h3>
-                <p style = "margin-left: 80px; margin-right: 80px">Distillation involves training a model, not on data, but on another model. This “teacher” model tends to be larger and more generic than the “student” model which tends to resemble a fine-tuned model in its narrow scope. 
-                The teacher model is trained using normal techniques and a generic dataset and the student model is trained on the outputs of the teacher model with an additional context-appropriate dataset. This student model uses less computational power while 
-                maintaining its accuracy. It’s near impervious to data poisoning because its goal is not to make accurate predictions but to mimic the functionality of the teacher model. While this is a powerful technique, it is important to note that the resulting 
-                model is smaller in scope and functionality than the large generic teacher model. It may result in accurate predictions using a fraction of memory, but it is not powerful enough to build a model to rival something like chatGPT.</p>
+            <h3 style="margin-left: 40px"><b>Distillation</b></h3>
+                <p style = "margin-left: 80px; margin-right: 80px">Distillation involves training a model, not on data, 
+                but on another model. This “teacher” model tends to be larger and more generic than the “student” model,
+                which tends to resemble a fine-tuned model in its narrow scope. 
+                The teacher model is trained using normal techniques and a generic dataset, and the student model 
+                is trained on the outputs of the teacher model with an additional context-appropriate dataset. 
+                This student model uses less computational power while 
+                maintaining its accuracy. It’s near impervious to data poisoning because its goal is not to make accurate predictions 
+                but to mimic the functionality of the teacher model. While this is a powerful technique, 
+                it is important to note that the resulting model is smaller in scope and functionality than the 
+                large generic teacher model. It may result in accurate predictions using a fraction of memory, 
+                but it is not powerful enough to build a model to rival something like ChatGPT.</p>
             <br>
-            <h3 style="margin-left: 40px">In-Context Learning (ILC)</h3>
+            <h3 style="margin-left: 40px"><b>In-Context Learning (ILC)</b></h3>
                 <p style = "margin-left: 80px; margin-right: 80px">In-context learning, or ILC, utilizes information given in the prompt to give additional context to the model. This additional context, assuming it is appropriately given, is one way users can get more accurate results from LLMs;
                  even if the model has been poisoned. It works by giving the model additional context or information on the topic the prompt is addressing. This can look like giving examples of the information you want, for example, “Grass is green, bark is brown, the sky is…”. 
                  It can also appear as directing the model to “take it step by step”. For example, LLMs are designed for language, not arithmetic. Often these models, when prompted directly to solve simple arithmetic, fail miserably. However, by asking the model to write out its
                   process in detail (or “step-by-step”!) this kind of “zero-shot” reasoning has been proven to help the same model correctly respond to the same question it would have otherwise gotten wrong.</p>
             <br>
-            <h3 style="margin-left: 40px">Adversarial Training</h3>
+            <h3 style="margin-left: 40px"><b>Adversarial Training</b></h3>
                 <p style = "margin-left: 80px; margin-right: 80px">Adversarial training is another way data poisoning can be used to build a more robust and resilient model. This type of training involves purposefully adding bad data or changing the reward feedback in an effort to fool the model into 
                 making incorrect predictions. This may sound counterproductive at first, but this technique allows model architects to identify weak points in the model and update parameters. Likewise, training the model to identify and handle bad data can make it more difficult 
                 for the model to be affected by adversarial attacks or data poisoning later on. However, adversarial training is expensive because it requires a lot of data and computing power. In some cases, this training technique can reduce accuracy due to the tendency of these 
                 models to become overfitted. However, there is a similar technique that doesn’t have these weak points.</p>
             <br>
-            <h3 style="margin-left: 40px">Adversarial Augmentation</h3>
+            <h3 style="margin-left: 40px"><b>Adversarial Augmentation</b></h3>
                 <p style = "margin-left: 80px; margin-right: 80px"> Adversarial augmentation trains the model on augmented data in an effort to teach the model how to identify distorted or harmful data. Augmentation can be used in tandem with adversarial training to reduce overfitting, but only a few such
                  methods have been found to produce satisfactory results. Models often find “shortcuts” or irrelevant correlations in the data that can reduce accuracy and be taken advantage of by poisoning attacks. Adversarial augmentation reduces the influence of such noise, and 
                  therefore weakens the efficacy of such attacks. </p>
-            <br>
-           <br>
+            <br> <br>
             <h2>Outlier Detection For Removing Poisoned Data</h2>
-                <p style="margin-left: 40px; margin-right: 40px">Outlier detection techniques can help in removing poisoned data, since they are effective at filtering various data samples, such as poisoned data samples. This is because outliers are data values that are outside of “normal behaviors”, making them clearly identifiable due to them standing out from the rest of the data.</p>
+                <p style="margin-left: 40px; margin-right: 40px">Outlier detection techniques can help in 
+                removing poisoned data since they are effective at filtering various data samples, 
+                such as poisoned data samples. This is because outliers are data values that are outside of “normal behaviors”, 
+                making them clearly identifiable due to them standing out from the rest of the data.</p>
             <br>
             <h3 style="margin-left: 40px">Z-Score</h3>
                 <p style="margin-left: 80px; margin-right: 80px">The z-score is a common technique used for detecting outliers. Specifically, the z-score measures the number of standard deviations a particular data point is away from the median pertaining to all the data. If there are 3 or more standard deviations for a given data point,
@@ -300,7 +379,7 @@
                      data sample contains. In essence, the data sample can be thought of as a cluster; the more compact the cluster, the higher the density. In order to determine the density deviation, it’s typical to use the K-Nearest Neighbors machine learning algorithm to determine the nearest sample neighbors of a given data sample.
                       If the given sample has a low density but the neighboring samples have high densities, then that means the given sample has a high density deviation; a high density deviation indicates the presence of outliers in the data sample.</p>
             <br>
-            <h2>Defenses Against Poisoned Data</h2>
+            <h2><b>Defenses Against Poisoned Data</b></h2>
             <!-- add link -->
                 <p style="margin-left: 80px; margin-right: 80px">The defenses against data poisoning tend to be reactionary. There are no well-developed methods for consistently identifying poisoned data within the training data or the model. However, there are plenty of identification and pruning techniques to handle the poisoned data that has already been introduced. We explore the techniques in depth in the <b>Identification</b> tab.</p>
  
@@ -309,7 +388,61 @@
 
         </div>
         <div id="citations" data-tab-content>
-            <h1>References</h1>
+            <h1><b>Works Cited</b></h1>
+            <br> <br>
+            <ul>
+                <li>A Comprehensive Introduction to Anomaly Detection. datacamp. (2023, November). <br> 
+                    <p style="margin-left: 40px">https://www.datacamp.com/tutorial/introduction-to-anomaly-detection</p>
+                </li>
+                <li>Dhar, P. (2023, March 24). Protecting AI Models from “Data Poisoning.” IEEE Spectrum. <br> 
+                    <p style="margin-left: 40px">https://spectrum.ieee.org/ai-cybersecurity-data-poisoning</p>
+                </li>
+                <li>Espinosa, N. (2023, March 10). The Unforeseen Consequences of ChatGPT. Forbes. <br> 
+                    <p style="margin-left: 40px">https://www.forbes.com/sites/forbestechcouncil/2023/03/10/the-unforeseen-consequences-of-chatgpt/?sh=6835c791eeab</p> 
+                </li>
+                <li>Hinton, G., et al. (2015, March 9). Distilling the Knowledge in a Neural Network. ArXiv. <br> 
+                    <p style="margin-left: 40px">https://arxiv.org/pdf/1503.02531.pdf</p>
+                </li>
+                <li>Jaadi, Z. (2024, February 23). A Step-by-Step Explanation of Principal Component Analysis (PCA). builtin. <br> 
+                    <p style="margin-left: 40px">https://builtin.com/data-science/step-step-explanation-principal-component-analysis</p> 
+                </li>
+                <li>Jagtap, R. (2022, November 21). Understanding the Markov Decision Process (MDP). builtin. <br>
+                    <p style="margin-left: 40px">https://builtin.com/machine-learning/markov-decision-process</p>
+                </li>
+                <li>Jayaswal, V. (2020, August 30). Local Outlier Factor (LOF). Towards Data Science. <br>
+                    <p style="margin-left: 40px">https://towardsdatascience.com/local-outlier-factor-lof-algorithm-for-outlier-identification-8efb887d9843</p> 
+                </li>
+                <li>Lenaerts-Bergmans, B. (2024, March 20). Data Poisoning: The Exploitation of Generative AI. <br> 
+                    <p style="margin-left: 40px">https://www.crowdstrike.com/cybersecurity-101/cyberattacks/data-poisoning/</p>
+                </li>
+                <li>Li, L., Spratling, M. (2023, Jan 24). Data Augmentation Alone Can Improve Adversarial Training. ArXiv. <br>
+                    <p style="margin-left: 40px">https://arxiv.org/pdf/2301.09879.pdf</p>
+                </li>
+                <li>Lie, Sean. (2023, March 22). Can Sparsity Make AI Models More Accurate? Cerebras. <br> 
+                    <p style="margin-left: 40px">https://www.cerebras.net/blog/can-sparsity-make-ai-models-more-accurate</p> 
+                </li>
+                <li>Paudice, A, et al. (2018, Feb 8). Detection of Adversarial Training Examples in Poisoning Attacks through Anomaly Detection. ArXiv. <br> 
+                    <p style="margin-left: 40px">https://arxiv.org/pdf/1802.03041.pdf</p>
+                </li>
+                <li>Shan, S., Ding, W., Passananti, J., Wu, S., Zheng, H., & Zhao, B. Y. (2024, February 16). Prompt-Specific Poisoning Attacks on Text-to-Image Generative Models. ArXiv. <br> 
+                    <p style="margin-left: 40px">https://arxiv.org/pdf/2310.13828.pdf</p> 
+                </li>
+                <li>Simons, A. (2023, October 23). Data Poisoning: The Newest Threat to Generative AI. Forcepoint. <br> 
+                    <p style="margin-left: 40px">https://www.forcepoint.com/blog/x-labs/data-poisoning-gen-ai#:~:text=Types%20of%20data%20poisoning%20attacks,negatives%2C%20and%20misclassified%20test%20samples.</p>
+                </li>
+                <li>Sinders, C. (2016, March 24). Microsoft’s Tay is an Example of Bad Design. Medium. <br> 
+                    <p style="margin-left: 40px">https://medium.com/@carolinesinders/microsoft-s-tay-is-an-example-of-bad-design-d4e65bb2569f#.s8fxcpeqk</p>
+                </li>
+                <li>Singh, R., Ktisma, S. (2023, Dec 16). VonGoom: A Novel Approach for Data Poisoning in Large Language Models. DelComplex. <br> 
+                    <p style="margin-left: 40px">https://xiosky.com/delmedia/media/ documents/vonGoom2023.pdf</p>
+                </li>
+                <li>Yerlikaya, F. A., & Bahtiyar, S. (2021, October 24). Data poisoning attacks against machine learning algorithms. ScienceDirect. <br> 
+                    <p style="margin-left: 40px">https://www.sciencedirect.com/science/article/pii/S0957417422012933</p> 
+                </li>
+                <li>Zhou, L., Gao, J., Li, D., & Shum, H.-Y. (2020, March 1). The Design and Implementation of Xiaoice, an Empathetic Social Chatbot. MIT Press Direct. <br> 
+                    <p style="margin-left: 40px">https://direct.mit.edu/coli/article/46/1/53/93380/The-Design-and-Implementation-of-XiaoIce-an</p> 
+                </li>
+            </ul>
         </div>
     </div>
 
