@@ -2,27 +2,65 @@
     display: none;
 }
 
+nav {
+    background-color: brown;
+}
+
+/*styling the pages*/
+#home {
+    text-align: center;
+    color: #E5BB89;
+}
+#home h1, #home h2 {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+}
+#about {
+    color: #E5BB89;
+}
+#types {
+    color: #E5BB89;
+}
+#identification {
+    color: #E5BB89;
+}
+#weaknesses {
+    color: #E5BB89;
+}
+#solutions {
+    color: #E5BB89;
+}
+#citations {
+    color: #E5BB89;
+}
+
 .active[data-tab-content] {
     display: block;
 }
 
+.tabs .tab {
+    background-color: #D2B48C; /* Set background color to light gray */
+    color: black; /* Text color for better contrast */
+}
+
+.tabs .tab.active {
+    background-color: #8B4513;
+    color: white;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #6F5D44;
 }
+
 
 header {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
-}
-
-nav {
-    background-color: #666;
-    padding: 10px;
 }
 
 nav ul {
@@ -37,7 +75,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: gray;
     text-decoration: none;
 }
 
@@ -53,10 +91,6 @@ nav ul li a {
 .tab {
     cursor: pointer;
     padding: 10px;
-}
-
-.tab.active {
-    background-color: #CCC;
 }
 
 .tab:hover {
