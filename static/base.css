@@ -102,6 +102,16 @@ nav ul li a {
     margin-right: 20px;
 }
 
+.para {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.big_para {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 main {
     max-width: 800px;
     margin: 20px auto;

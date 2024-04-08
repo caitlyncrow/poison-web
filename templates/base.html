@@ -27,11 +27,11 @@
             <h1>
                 <b>About Data Poisoning</b>
             </h1>
-            <br> <br>
+            <br> 
             <h2>
                 <b>What is Data Poisoning?</b>
             </h2>
-            <p>Data Poisoning is an adversarial attack on machine learning models where the attacker targets the model's training data
+            <p class = "big_para">Data Poisoning is an adversarial attack on machine learning models where the attacker targets the model's training data
             to negatively affect the model's performance. This change in performance can be as simple as a reduction in the model's
             accuracy to something as malicious as generating hateful and dangerous output in favor of the attacker.
             </p>
@@ -39,7 +39,7 @@
             <h2>
                 <b>The Dark Side of Data Poisoning</b>
             </h2>
-            <p>Data Poisoning is considered to be the most critical vulnerability for machine learning models, such as Large
+            <p class = "big_para">Data Poisoning is considered to be the most critical vulnerability for machine learning models, such as Large
             Language Models (LLMs), and for good reason. This particularly holds true when looking at the strong influence data
             poisoning has on information consumption. As discussed in the section <b>What is Data Poisoning?</b>, a
             Data Poisoning attack leads to an LLM or any kind of machine learning model to become corrupted and therefore
@@ -51,7 +51,7 @@
             <h2>
                 <b>Is Data Poisoning Really All That Bad?</b>
             </h2>
-            <p>Ironically, Data Poisoning can actually be used in a manner intended to benefit
+            <p class = "big_para">Ironically, Data Poisoning can actually be used in a manner intended to benefit
             machine learning models. Take for example the Data Poisoning Attack called <i>Nightshade</i>. It was an attack developed
             by a group of researchers that is now used by various content creators, such as artists, to protect their work from being used
             in other data sets without permission.
@@ -64,17 +64,17 @@
                 <p>There are four main types of data poisoning attacks, 
                 which are Availability Attacks, Backdoor Attacks, Targeted Attacks, Subpopulation Attacks, and 
                 "Dirty Neighbor" Attacks.</p>
-                <br> <br>
+                <br> 
             <h2>
                 <b>Availability Attack</b>
             </h2>
-                <p>The entire model gets corrupted, which means there is an 
+                <p class = "big_para">The entire model gets corrupted, which means there is an 
                 increase in the number of false negatives and false positives for the predictions.</p>
             <br>
             <h2>
                 <b>Backdoor Attack</b>
             </h2>
-                <p>The model gets introduced to several examples that cause it to 
+                <p class = "big_para">The model gets introduced to several examples that cause it to 
                 misclassify the predictions from the training data, which results in the model being corrupted. 
                 In order for the attacker to decide on which examples to use, they hack into the model’s information, 
                 such as its training data. Unlike an Availability Attack, a Backdoor Attack is purposeful in 
@@ -85,7 +85,7 @@
                 <b>Targeted Attack</b>
             </h2>
             <!--add link to below paragraph-->
-                <p>The model accurately classifies most of the training data, but there are a few examples 
+                <p class = "big_para">The model accurately classifies most of the training data, but there are a few examples 
                 that get misclassified. Because of this, a Targeted Attack can be deceiving and especially hard to detect. 
                 Just like a Backdoor Attack, a Targeted Attack is purposeful in deciding which data samples to poison. 
                 However, a Targeted Attack goes a step further by poisoning data in such a way so that the model conveys the exact 
@@ -94,7 +94,7 @@
             <h2>
                 <b>Subpopulation Attack</b>
             </h2>
-                <p>The model undergoes a Targeted Attack, but in addition to affecting those few examples, 
+                <p class = "big_para">The model undergoes a Targeted Attack, but in addition to affecting those few examples, 
                 this attack also affects examples that are conceptually similar. For example, when talking about an image
                 generation model, the model may produce images of cats as opposed to dogs. However, a Subpopulation
                 Attack may also affect concepts related to "dog", such as "wolf", "puppy", etc.</p>
@@ -103,7 +103,7 @@
                 <b>The “Dirty Neighbor” Attack</b>
             </h2>
             <!--add link to below paragraph-->
-                <p>This attack takes particular advantage of the relationship between semantic frequency and concept sparsity 
+                <p class = "big_para">This attack takes particular advantage of the relationship between semantic frequency and concept sparsity 
                 (refer to the tab <b>Weaknesses</b> for more information). This attack works by selecting a concept that is the 
                 complete opposite or unrelated to the original concept. From there, the attack poisons the semantic “neighbors” 
                 of this opposite or unrelated concept, so that this concept now becomes
@@ -118,11 +118,11 @@
             <h1>
                 <b>How To Identify Data Poisoning in Large Language Models</b>
             </h1>
-            <br> <br>
+            <br> 
             <h2>
                 <b>What does poisoned data look like?</b>
             </h2>
-                <p> Data poisoning adds another level of difficulty in filtering out bad data. After all, 
+                <p class = "big_para"> Data poisoning adds another level of difficulty in filtering out bad data. After all, 
                 it wouldn’t be very effective if the bad data was easy to identify. 
                 Even evaluating the performance of a model is not very effective in determining if the model has been poisoned, 
                 much less identifying the offending samples. This is in part because there is no base performance standard 
@@ -133,67 +133,68 @@
             <h2>
                 <b>Major Challenges</b>
             </h2>
-                <p>1. Data poisoning attacks can be pretty simple to implement, because they don’t always need access to the image generation pipeline, 
+                <p class = "para">1. Data poisoning attacks can be pretty simple to implement, because they don’t always need access to the image generation pipeline, 
                 large data samples, or knowledge of how the model is trained in order for them to be successful.</p>
-                <p>2. Oftentimes, it is challenging to determine if an LLM model has a data poisoning attack in the first place, since it’s 
+                <p class = "para">2. Oftentimes, it is challenging to determine if an LLM model has a data poisoning attack in the first place, since it’s 
                 hard to evaluate its performance. As previously mentioned in the section <b>What does poisoned data look like?</b>, 
                 there is not one way to measure a model’s performance. Rather, the model’s performance 
                 can be evaluated in different ways. For instance, one way a model’s performance can be measured is using the PCA method.</p>
                 <h3 style="margin-left: 40px">
                     <b>What is the PCA method?</b>
                 </h3>
-                <p style="margin-left: 40px">The PCA method aims to retain a model’s accuracy using the fewest variables possible. The few variables that are left are the ones with the lowest variance, 
+                <p class = "para">The PCA method aims to retain a model’s accuracy using the fewest variables possible. The few variables that are left are the ones with the lowest variance, 
                 which indicates that they have the most significant role compared to the rest of
                 the variables in affecting a model’s predictions and ultimately its performance. </p>
                 <br>
-                <p>Additionally, a model’s performance can be hard to evaluate because of the sheer amount of data the model needs to use. 
+                <p class = "big_para">Additionally, a model’s performance can be hard to evaluate because of the sheer amount of data the model needs to use. 
                 Since a machine learning model relies on so much data for making predictions, it becomes challenging to maintain quality control 
                 of the model, thereby making it challenging to evaluate its performance.
                 Furthermore, a lot of that data gets scraped from the Internet, making it hard to maintain and ensure the data is used 
                 for the right purposes.</p>
         </div>
         <div id="weaknesses" data-tab-content>
-            <h1>
-                <b>Understanding What Can Make an Large Language Model (LLM) Susceptible to Data Poisoning</b>
-            </h1>
+            <h1>Understanding What Can Make an Large Language Model (LLM) Susceptible to Data Poisoning</h1>
             <br>
-            <h2>
-                <b>Failed vs. Successful Models</b>
-            </h2>
-            <h3 style="margin-left: 40px">
-                <b>Failed Model</b>
-            </h3>
-            <p style="margin-left: 40px">A major failure was an LLM model produced by Microsoft called Tay. Its failure is said to be
+            
+            <h2>Failed vs. Successful Models</h2>
+            <h3 style="margin-left: 40px">Failed Model</h3>
+
+            <p class = "big_para">A major failure was an LLM model produced by Microsoft called Tay. Its failure is said to be
             mainly influenced from the way the model was trained. In essence, Tay was trained by generating responses to various
             questions it was asked. For every response it generated, Tay mapped the generated responses to their corresponding
             questions as well as questions that were semantically similar.</p>
+
             <h4 style="margin-left: 80px">
                 <b>What is Meant by Semantically Similar?</b>
             </h4>
-            <p style="margin-left: 80px">Let's consider the question "What is your name?". The question "What is your name?"
+            <p class = "para">Let's consider the question "What is your name?". The question "What is your name?"
             can be asked in a variety of ways, such as "Who are you?", "What do you go by?", etc. The responses to these
             questions are generally going to be the same. For instance, the response "My name is Sam" or "I'm Sam" can work
             for each of these questions. Since all the questions are similar to one another and produce pretty much the same
             responses, these questions are therefore said to be semantically similar.</p>
-            <p style="margin-left: 40px">Even though Tay was trained in an effective manner, a major issue was that
+
+            <p class = "big_para">Even though Tay was trained in an effective manner, a major issue was that
             two key parameters weren't specified: Type and Frequency. Specifically, the model mapped questions to responses
             too broadly. Due to its lack of constraints that would be indicated by the parameters, the model became subject
             to Targeted Attacks (refer to the tab <b>Types</b> for more detail). Ultimately, this made the model vulnerable
             to inappropriate and offensive responses directed by users with malicious intent.</p>
+            
             <h3 style="margin-left: 40px">
                 <b>Model Training Parameters</b>
             </h3>
+           
             <h4 style="margin-left: 80px">
                 <b>Type</b>
             </h4>
-            <p style="margin-left: 80px">This parameter specifies the type of input the model
+            
+            <p class = "para">This parameter specifies the type of input the model
             receives (i.e. the type of questions Tay gets asked in this case).</p>
             <h4 style="margin-left: 80px">
                 <b>Frequency</b>
             </h4>
-            <p style="margin-left: 80px">This parameter specifies how often the model receives various types
+            <p class = "para">This parameter specifies how often the model receives various types
             of input (i.e. how often Tay gets asked certain types of questions).</p>
-            <p style="margin-left: 40px">These parameters can be the key to mitigating Data Poisoning attacks,
+            <p class = "big_para">These parameters can be the key to mitigating Data Poisoning attacks,
             as placing constraints on the type and frequency of the input the model receives can help filter out the attacks.
             For instance, if the model was designed to only accept input that doesn't include remarks that are deemed offensive, 
             then any input that included offensive remarks would be considered as outliers. This is discussed in greater
@@ -203,7 +204,7 @@
         <h3 style="margin-left: 40px">
             <b>Successful Model</b>
         </h3>
-        <p style="margin-left: 40px">Unlike Tay, the model known as XiaoIce was much more successful in its design.
+        <p class = "big_para">Unlike Tay, the model known as XiaoIce was much more successful in its design.
         Its success mainly has to do with the model taking into account the context and the use of language when 
         producing responses to the questions it gets asked. In essence, the design of XiaoIce takes in components
         of EQ in addition to IQ. Most machine learning models only focus on IQ, which models the concept of memory and
@@ -215,20 +216,20 @@
         <h4 style="margin-left: 80px">
             <b>Emotion</b>
         </h4>
-            <p style="margin-left: 80px">On top of the data associated with the questions it receives from
+            <p class = "para">On top of the data associated with the questions it receives from
             the user, XiaoIce also gets pre-trained on data pertaining to common human emotions. This is to ensure that
             XiaoIce is able to recognize those emotions and similar ones to them when being trained.</p>
         <h4 style="margin-left: 80px">
             <b>Context</b>
         </h4>
-            <p style="margin-left: 80px">In order to train on common human emotions as well as questions it may be
+            <p class = "para">In order to train on common human emotions as well as questions it may be
             asked, the model uses various querying techniques such as Markov Decision Processes to filter out all
             the possible emotions a given person is experiencing based on their use of language.</p>
         <br>
         <h3 style="margin-left: 40px">
             <b>What are Markov Decision Processes?</b>
         </h3>
-            <p style="margin-left: 40px">Markov Decision Processes are a means for a machine learning model to
+            <p class = "big_para">Markov Decision Processes are a means for a machine learning model to
             determine the possible next states that can occur based on the current state and previous states
             that occurred. In the case of XiaoIce, the states represent the various words provided as input
             for which emotions are predicted. Therefore, the current state would be the current word
@@ -241,7 +242,7 @@
             to determine the context as well as the emotional level of that given conversation and thereby
             offer an appropriate response.</p>
         <br>
-            <p style="margin-left: 40px">By taking emotion and ultimately context into account, XiaoIce is able
+            <p class = "big_para">By taking emotion and ultimately context into account, XiaoIce is able
             to significantly reduce the occurrence of inappropriate and offensive responses, as they
             are responses that are typically not viewed positively by the user.</p>
         <br>
@@ -251,7 +252,7 @@
         <h3 style="margin-left: 40px">
             <b>Bad Data</b>
         </h3>
-        <p style="margin-left: 40px">LLMs, like most modern machine learning models, rely heavily on lots of data.
+        <p class = "big_para">LLMs, like most modern machine learning models, rely heavily on lots of data.
         However, these models may not have inherent defense strategies to identify bad data. Data is considered to
         be bad when it is incorrectly labeled, missing key information, contains irrelevant information, or even
         considered harmful to the accuracy and performance of the model. Unfortunately, every machine learning model
@@ -262,7 +263,7 @@
         <h3 style="margin-left: 40px">
             <b>Weak Data</b>
         </h3>
-        <p style="margin-left: 40px">It's not only bad data that may potentially negatively affect
+        <p class = "big_para">It's not only bad data that may potentially negatively affect
         a model's performance. Additionally, weak data is data that provides little use to the model yet
         can provide an opening for a Data Poisoning attack to exploit the model.
         A Data Poisoning attack may exploit important features of the model, such as Semantic Frequency
@@ -270,7 +271,7 @@
         <h4 style="margin-left: 80px">
             <b>Concept Sparsity</b>
         </h4>
-        <p style="margin-left: 80px">Concept Sparsity is the idea that particular concepts (e.g. words
+        <p class = "para">Concept Sparsity is the idea that particular concepts (e.g. words
         for which an LLM model is trained on) may have smaller pools, or clusters, to draw from than other concepts
         in the training data. Since these concepts are in small clusters, they are therefore
         appealing for data poisoning attacks. This is because ultimately few data samples are needed
@@ -282,7 +283,7 @@
         <h4 style="margin-left: 80px">
             <b>Semantic Frequency</b>
         </h4>
-        <p style="margin-left: 80px">Semantic Frequency is the extent towards which certain concepts
+        <p class = "para">Semantic Frequency is the extent towards which certain concepts
         are related to each other. This relationship between concepts can be 
         taken advantage of to further spread the influence of poisoned data. For instance, let's
         consider a data poisoning attack affects the concept "castle". Any time the model encounters the
@@ -294,7 +295,7 @@
         <h2>
             <b>Weaknesses Caused By a Model's Training Structure</b>
         </h2>
-        <p>As mentioned in the section titled <b>Weaknesses Caused By Bad Data</b>, most machine
+        <p class = "big_para">As mentioned in the section titled <b>Weaknesses Caused By Bad Data</b>, most machine
         learning models are trained using vast amounts of data.
         There are two main types of machine learning models, which are Supervised and Unsupervised
         machine learning models. The main difference between these two types of models is the use
@@ -307,16 +308,12 @@
 
     </div>
         <div id="solutions" data-tab-content>
-            <h1>
-                <b>Possible Solutions to Address Data Poisoning</b>
-            </h1>
+            <h1>Possible Solutions to Address Data Poisoning</h1>
             <br> <br>
-            <h2>
-                <b>Improving with Sparsity</b>
-            </h2>
-            <br>
+            <h2>Improving with Sparsity</h2>
+            
                 <!-- add link to bolded backdoor attack to link to types page-->
-            <p style ="margin-left: 40px; margin-right: 40px">
+            <p class = "big_para">
                 Concept sparsity can be used in a very similar way as adversarial attacks to create a better model. 
                 <b>Backdoor attacks </b> can be used to identify the frequency of concepts within a dataset 
                 to then target those with lower frequency. 
@@ -327,15 +324,16 @@
                 keeping certain weights at zero, which essentially prunes the connections within the model. 
                 This is particularly useful in increasing the model’s accuracy.</p>
                 <!-- add link here -->
-            <p style ="margin-left: 40px">More information about using sparsity to identify bad data can be found in the <b>Weakness</b> 
+            <p class = "big_para">More information about using sparsity to identify bad data can be found in the <b>Weakness</b> 
             tab under the <b>Weaknesses Caused by Data</b> heading.</p>
+            <br>
             <br>
             <h2>
                 <b>Alternative Training Techniques</b>
             </h2>
-            <br>
+            
             <h3 style="margin-left: 40px"><b>Distillation</b></h3>
-                <p style = "margin-left: 80px; margin-right: 80px">Distillation involves training a model, not on data, 
+                <p class = "para">Distillation involves training a model, not on data, 
                 but on another model. This “teacher” model tends to be larger and more generic than the “student” model,
                 which tends to resemble a fine-tuned model in its narrow scope. 
                 The teacher model is trained using normal techniques and a generic dataset, and the student model 
@@ -348,40 +346,40 @@
                 but it is not powerful enough to build a model to rival something like ChatGPT.</p>
             <br>
             <h3 style="margin-left: 40px"><b>In-Context Learning (ILC)</b></h3>
-                <p style = "margin-left: 80px; margin-right: 80px">In-context learning, or ILC, utilizes information given in the prompt to give additional context to the model. This additional context, assuming it is appropriately given, is one way users can get more accurate results from LLMs;
+                <p class = "para">In-context learning, or ILC, utilizes information given in the prompt to give additional context to the model. This additional context, assuming it is appropriately given, is one way users can get more accurate results from LLMs;
                  even if the model has been poisoned. It works by giving the model additional context or information on the topic the prompt is addressing. This can look like giving examples of the information you want, for example, “Grass is green, bark is brown, the sky is…”. 
                  It can also appear as directing the model to “take it step by step”. For example, LLMs are designed for language, not arithmetic. Often these models, when prompted directly to solve simple arithmetic, fail miserably. However, by asking the model to write out its
                   process in detail (or “step-by-step”!) this kind of “zero-shot” reasoning has been proven to help the same model correctly respond to the same question it would have otherwise gotten wrong.</p>
             <br>
             <h3 style="margin-left: 40px"><b>Adversarial Training</b></h3>
-                <p style = "margin-left: 80px; margin-right: 80px">Adversarial training is another way data poisoning can be used to build a more robust and resilient model. This type of training involves purposefully adding bad data or changing the reward feedback in an effort to fool the model into 
+                <p class = "para">Adversarial training is another way data poisoning can be used to build a more robust and resilient model. This type of training involves purposefully adding bad data or changing the reward feedback in an effort to fool the model into 
                 making incorrect predictions. This may sound counterproductive at first, but this technique allows model architects to identify weak points in the model and update parameters. Likewise, training the model to identify and handle bad data can make it more difficult 
                 for the model to be affected by adversarial attacks or data poisoning later on. However, adversarial training is expensive because it requires a lot of data and computing power. In some cases, this training technique can reduce accuracy due to the tendency of these 
                 models to become overfitted. However, there is a similar technique that doesn’t have these weak points.</p>
             <br>
             <h3 style="margin-left: 40px"><b>Adversarial Augmentation</b></h3>
-                <p style = "margin-left: 80px; margin-right: 80px"> Adversarial augmentation trains the model on augmented data in an effort to teach the model how to identify distorted or harmful data. Augmentation can be used in tandem with adversarial training to reduce overfitting, but only a few such
+                <p class = "para"> Adversarial augmentation trains the model on augmented data in an effort to teach the model how to identify distorted or harmful data. Augmentation can be used in tandem with adversarial training to reduce overfitting, but only a few such
                  methods have been found to produce satisfactory results. Models often find “shortcuts” or irrelevant correlations in the data that can reduce accuracy and be taken advantage of by poisoning attacks. Adversarial augmentation reduces the influence of such noise, and 
                  therefore weakens the efficacy of such attacks. </p>
             <br> <br>
             <h2>Outlier Detection For Removing Poisoned Data</h2>
-                <p style="margin-left: 40px; margin-right: 40px">Outlier detection techniques can help in 
+                <p class = "big_para">Outlier detection techniques can help in 
                 removing poisoned data since they are effective at filtering various data samples, 
                 such as poisoned data samples. This is because outliers are data values that are outside of “normal behaviors”, 
                 making them clearly identifiable due to them standing out from the rest of the data.</p>
             <br>
             <h3 style="margin-left: 40px">Z-Score</h3>
-                <p style="margin-left: 80px; margin-right: 80px">The z-score is a common technique used for detecting outliers. Specifically, the z-score measures the number of standard deviations a particular data point is away from the median pertaining to all the data. If there are 3 or more standard deviations for a given data point,
+                <p class = "para">The z-score is a common technique used for detecting outliers. Specifically, the z-score measures the number of standard deviations a particular data point is away from the median pertaining to all the data. If there are 3 or more standard deviations for a given data point,
                      then that data point is an outlier. The quantity of the outliers, as well as the number of standard deviations away can have a significant impact on the performance of an LLM. However, the z-score method is simply one way to detect outliers</p>
             <br>
             <h3 style="margin-left: 40px">Local Outlier Factor</h3>
-                <p style="margin-left: 80px; margin-right: 80px">Another common method used for detecting outliers in more complex and larger data is known as the Local Outlier Factor. The Local Outlier Factor is used to measure the density deviation of a given data sample compared to its neighboring data samples. Density refers to the number of points a
+                <p class = "para">Another common method used for detecting outliers in more complex and larger data is known as the Local Outlier Factor. The Local Outlier Factor is used to measure the density deviation of a given data sample compared to its neighboring data samples. Density refers to the number of points a
                      data sample contains. In essence, the data sample can be thought of as a cluster; the more compact the cluster, the higher the density. In order to determine the density deviation, it’s typical to use the K-Nearest Neighbors machine learning algorithm to determine the nearest sample neighbors of a given data sample.
                       If the given sample has a low density but the neighboring samples have high densities, then that means the given sample has a high density deviation; a high density deviation indicates the presence of outliers in the data sample.</p>
             <br>
             <h2><b>Defenses Against Poisoned Data</b></h2>
             <!-- add link -->
-                <p style="margin-left: 80px; margin-right: 80px">The defenses against data poisoning tend to be reactionary. There are no well-developed methods for consistently identifying poisoned data within the training data or the model. However, there are plenty of identification and pruning techniques to handle the poisoned data that has already been introduced. We explore the techniques in depth in the <b>Identification</b> tab.</p>
+                <p class = "big_para">The defenses against data poisoning tend to be reactionary. There are no well-developed methods for consistently identifying poisoned data within the training data or the model. However, there are plenty of identification and pruning techniques to handle the poisoned data that has already been introduced. We explore the techniques in depth in the <b>Identification</b> tab.</p>
  
             <br>
             <br>
