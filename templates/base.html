@@ -84,12 +84,12 @@
             <h2>
                 <b>Targeted Attack</b>
             </h2>
-            <!--add link to below paragraph-->
                 <p class = "big_para">The model accurately classifies most of the training data, but there are a few examples 
                 that get misclassified. Because of this, a Targeted Attack can be deceiving and especially hard to detect. 
                 Just like a Backdoor Attack, a Targeted Attack is purposeful in deciding which data samples to poison. 
                 However, a Targeted Attack goes a step further by poisoning data in such a way so that the model conveys the exact 
                 information the attacker wants.</p>
+                <p class = "big_para">Microsoft Tay is an excellent example of a Targeted Attack at play – check out the <a data-tab-target="#weaknesses" class = "link">Weakness</a> tab to learn more</p>
             <br>
             <h2>
                 <b>Subpopulation Attack</b>
@@ -102,9 +102,8 @@
             <h2>
                 <b>The “Dirty Neighbor” Attack</b>
             </h2>
-            <!--add link to below paragraph-->
                 <p class = "big_para">This attack takes particular advantage of the relationship between semantic frequency and concept sparsity 
-                (refer to the tab <b>Weaknesses</b> for more information). This attack works by selecting a concept that is the 
+                (refer to the tab <a data-tab-target="#weaknesses" class = "link">Weaknesses</a> for more information). This attack works by selecting a concept that is the 
                 complete opposite or unrelated to the original concept. From there, the attack poisons the semantic “neighbors” 
                 of this opposite or unrelated concept, so that this concept now becomes
                 semantically similar to the original concept. In essence, antonyms now become synonyms, 
@@ -153,7 +152,9 @@
                 for the right purposes.</p>
         </div>
         <div id="weaknesses" data-tab-content>
-            <h1>Understanding What Can Make an Large Language Model (LLM) Susceptible to Data Poisoning</h1>
+            <h1>
+                <b>Understanding What Can Make an Large Language Model (LLM) Susceptible to Data Poisoning</b>
+            </h1>
             <br>
             
             <h2>Failed vs. Successful Models</h2>
@@ -176,7 +177,7 @@
             <p class = "big_para">Even though Tay was trained in an effective manner, a major issue was that
             two key parameters weren't specified: Type and Frequency. Specifically, the model mapped questions to responses
             too broadly. Due to its lack of constraints that would be indicated by the parameters, the model became subject
-            to Targeted Attacks (refer to the tab <b>Types</b> for more detail). Ultimately, this made the model vulnerable
+            to Targeted Attacks (refer to the tab <a data-tab-target="#types" class = "link">Types</a> for more detail). Ultimately, this made the model vulnerable
             to inappropriate and offensive responses directed by users with malicious intent.</p>
             
             <h3 style="margin-left: 40px">
@@ -198,7 +199,7 @@
             as placing constraints on the type and frequency of the input the model receives can help filter out the attacks.
             For instance, if the model was designed to only accept input that doesn't include remarks that are deemed offensive, 
             then any input that included offensive remarks would be considered as outliers. This is discussed in greater
-            detail in the <b>Solutions</b> tab, but determining outliers can help filter out poisoned data samples, since
+            detail in the <a data-tab-target="#solutions" class = "link">Solutions</a> tab, but determining outliers can help filter out poisoned data samples, since
             the poisoned data samples will "stand out" from the "normal" data samples.</p>
         <br>
         <h3 style="margin-left: 40px">
@@ -312,10 +313,9 @@
             <br> <br>
             <h2>Improving with Sparsity</h2>
             
-                <!-- add link to bolded backdoor attack to link to types page-->
             <p class = "big_para">
                 Concept sparsity can be used in a very similar way as adversarial attacks to create a better model. 
-                <b>Backdoor attacks </b> can be used to identify the frequency of concepts within a dataset 
+                <a data-tab-target="#types" class = "link">Backdoor attacks</a> can be used to identify the frequency of concepts within a dataset 
                 to then target those with lower frequency. 
                 This same concept can be used to identify weaknesses in data and provide opportunities to 
                 improve the model's organization of such data. In this way, the model can improve its accuracy without requiring a 
@@ -323,8 +323,8 @@
                 power. Furthermore, unstructured sparsity is a technique used within the structure of the model by 
                 keeping certain weights at zero, which essentially prunes the connections within the model. 
                 This is particularly useful in increasing the model’s accuracy.</p>
-                <!-- add link here -->
-            <p class = "big_para">More information about using sparsity to identify bad data can be found in the <b>Weakness</b> 
+                
+            <p class = "big_para">More information about using sparsity to identify bad data can be found in the <a data-tab-target="#weaknesses" class = "link">Weakness</a> 
             tab under the <b>Weaknesses Caused by Data</b> heading.</p>
             <br>
             <br>
@@ -378,8 +378,8 @@
                       If the given sample has a low density but the neighboring samples have high densities, then that means the given sample has a high density deviation; a high density deviation indicates the presence of outliers in the data sample.</p>
             <br>
             <h2><b>Defenses Against Poisoned Data</b></h2>
-            <!-- add link -->
-                <p class = "big_para">The defenses against data poisoning tend to be reactionary. There are no well-developed methods for consistently identifying poisoned data within the training data or the model. However, there are plenty of identification and pruning techniques to handle the poisoned data that has already been introduced. We explore the techniques in depth in the <b>Identification</b> tab.</p>
+                <p class = "big_para">The defenses against data poisoning tend to be reactionary. There are no well-developed methods for consistently identifying poisoned data within the training data or the model. However, there are plenty of identification and pruning techniques to handle the poisoned data that has already been introduced. 
+                    We explore the techniques in depth in the <a data-tab-target="#identification" class = "link">Identification</a> tab.</p>
  
             <br>
             <br>

@@ -102,6 +102,11 @@ nav ul li a {
     margin-right: 20px;
 }
 
+.link {
+    color: blue;
+    font-weight: bold;
+}
+
 .para {
     margin-left: 80px;
     margin-right: 80px;
