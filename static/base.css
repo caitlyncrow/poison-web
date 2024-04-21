@@ -1,4 +1,8 @@
-[data-tab-content] {
+.tab-content > [data-tab-content].active {
+    display: block;
+}
+
+.tab-content > [data-tab-content] {
     display: none;
 }
 
@@ -32,10 +36,6 @@ nav {
 }
 #citations {
     color: #E5BB89;
-}
-
-.active[data-tab-content] {
-    display: block;
 }
 
 .tabs .tab {

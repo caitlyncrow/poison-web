@@ -19,11 +19,13 @@
 
     <!--Below code displays the content for the given tab I click on in the navigation bar-->
     <div class="tab-content">
-        <div id="home" class="section1" data-tab-content class="active">  ,<!-- an active class means it is the default tab -->
+        <div id="home" class="section1 active" data-tab-content class>  ,<!-- an active class means it is the default tab -->
             <h1>Learn more about data poisoning and the ways it can be addressed!</h1>
             <h2>Explore the tabs to learn more!</h2>
         </div>
-        <div id="about" data-tab-content>  ,<!-- an active class means it is the default tab -->
+        
+        
+        <div id="about" class="section1" data-tab-content>  ,<!-- an active class means it is the default tab -->
             <h1>
                 <b>About Data Poisoning</b>
             </h1>
@@ -57,11 +59,13 @@
             in other data sets without permission.
             </p>
         </div>
-        <div id="types" data-tab-content>
+        
+        
+        <div id="types" class="section1" data-tab-content>
             <h1>
                 <b>Types of Data Poisoning</b>
             </h1>
-                <p>There are four main types of data poisoning attacks, 
+                <p>There are five main types of data poisoning attacks, 
                 which are Availability Attacks, Backdoor Attacks, Targeted Attacks, Subpopulation Attacks, and 
                 "Dirty Neighbor" Attacks.</p>
                 <br> 
@@ -89,7 +93,7 @@
                 Just like a Backdoor Attack, a Targeted Attack is purposeful in deciding which data samples to poison. 
                 However, a Targeted Attack goes a step further by poisoning data in such a way so that the model conveys the exact 
                 information the attacker wants.</p>
-                <p class = "big_para">Microsoft Tay is an excellent example of a Targeted Attack at play – check out the <a data-tab-target="#weaknesses" class = "link">Weakness</a> tab to learn more</p>
+                <p class = "big_para">Microsoft Tay is an excellent example of a Targeted Attack at play – check out the <a data-tab-target="#weaknesses" class = "link">Weaknesses</a> tab to learn more</p>
             <br>
             <h2>
                 <b>Subpopulation Attack</b>
@@ -111,9 +115,10 @@
                 requires only a small number of poisoning samples to be detrimental to the model.</p>
             <br>
 
-            </div>
+        </div>
 
-        <div id="identification" data-tab-content>
+        
+        <div id="identification" class="section1" data-tab-content>
             <h1>
                 <b>How To Identify Data Poisoning in Large Language Models</b>
             </h1>
@@ -151,9 +156,11 @@
                 Furthermore, a lot of that data gets scraped from the Internet, making it hard to maintain and ensure the data is used 
                 for the right purposes.</p>
         </div>
-        <div id="weaknesses" data-tab-content>
+        
+        
+        <div id="weaknesses" class="section1" data-tab-content>
             <h1>
-                <b>Understanding What Can Make an Large Language Model (LLM) Susceptible to Data Poisoning</b>
+                <b>Understanding What Can Make a Large Language Model (LLM) Susceptible to Data Poisoning</b>
             </h1>
             <br>
             
@@ -235,13 +242,12 @@
             that occurred. In the case of XiaoIce, the states represent the various words provided as input
             for which emotions are predicted. Therefore, the current state would be the current word
             for which XiaoIce is making a prediction and the previous states would be the words XiaoIce
-            already took as input to make predictions. Meanwhile, the future states would be the possible emotions
-            that can be associated with the next remaining words in the input given the emotions predicted from the
-            previous words. The fewer remaining words there are left in the input, the more constrained (i.e. queried)
-            the possible emotions are. Eventually, this results in possible emotion being left, which is used to
-            predict the entire output. By using query techniques such as Markov Decision Processes, XiaoIce is able
-            to determine the context as well as the emotional level of that given conversation and thereby
-            offer an appropriate response.</p>
+            already took as input to make predictions. Meanwhile, the future states would be the next remaining words
+            in the input that can be used to predict certain emotions. The fewer remaining words there are left in the input, 
+            the more constrained (i.e. queried) the possible emotions are. Eventually, this results in one or a few
+            possible emotions being left, which is used to predict the entire output. By using query techniques such as 
+            Markov Decision Processes, XiaoIce is able to determine the context as well as the emotional level of that given 
+            conversation and thereby offer an appropriate response.</p>
         <br>
             <p class = "big_para">By taking emotion and ultimately context into account, XiaoIce is able
             to significantly reduce the occurrence of inappropriate and offensive responses, as they
@@ -291,12 +297,12 @@
         word "castle" in its training data, it falsely interprets the meaning of "castle" to be closer to
         "toaster". As a result, the model may cascade into wrong predictions towards concepts 
         related to "castle", such as "house". Now, the model assumes houses are made of metal and its denizens
-        are bread, which is absurb!</p>
+        are bread, which is absurd!</p>
         <br>
         <h2>
             <b>Weaknesses Caused By a Model's Training Structure</b>
         </h2>
-        <p class = "big_para">As mentioned in the section titled <b>Weaknesses Caused By Bad Data</b>, most machine
+        <p class = "big_para">As mentioned in the section titled <b>Weaknesses Caused By Data</b>, most machine
         learning models are trained using vast amounts of data.
         There are two main types of machine learning models, which are Supervised and Unsupervised
         machine learning models. The main difference between these two types of models is the use
@@ -308,23 +314,25 @@
 
 
     </div>
-        <div id="solutions" data-tab-content>
+    
+    
+    <div id="solutions" class="section1" data-tab-content>
             <h1>Possible Solutions to Address Data Poisoning</h1>
             <br> <br>
             <h2>Improving with Sparsity</h2>
             
             <p class = "big_para">
-                Concept sparsity can be used in a very similar way as adversarial attacks to create a better model. 
+                Concept sparsity can be leveraged to create a better model. 
                 <a data-tab-target="#types" class = "link">Backdoor attacks</a> can be used to identify the frequency of concepts within a dataset 
                 to then target those with lower frequency. 
-                This same concept can be used to identify weaknesses in data and provide opportunities to 
+                This same idea can be used to identify weaknesses in data and provide opportunities to 
                 improve the model's organization of such data. In this way, the model can improve its accuracy without requiring a 
                 substantial increase in computing
                 power. Furthermore, unstructured sparsity is a technique used within the structure of the model by 
                 keeping certain weights at zero, which essentially prunes the connections within the model. 
                 This is particularly useful in increasing the model’s accuracy.</p>
                 
-            <p class = "big_para">More information about using sparsity to identify bad data can be found in the <a data-tab-target="#weaknesses" class = "link">Weakness</a> 
+            <p class = "big_para">More information about using sparsity to identify bad data can be found in the <a data-tab-target="#weaknesses" class = "link">Weaknesses</a> 
             tab under the <b>Weaknesses Caused by Data</b> heading.</p>
             <br>
             <br>
@@ -333,7 +341,7 @@
             </h2>
             
             <h3 style="margin-left: 40px"><b>Distillation</b></h3>
-                <p class = "para">Distillation involves training a model, not on data, 
+                <p class = "para">Distillation involves training a model not on data, 
                 but on another model. This “teacher” model tends to be larger and more generic than the “student” model,
                 which tends to resemble a fine-tuned model in its narrow scope. 
                 The teacher model is trained using normal techniques and a generic dataset, and the student model 
@@ -352,13 +360,13 @@
                   process in detail (or “step-by-step”!) this kind of “zero-shot” reasoning has been proven to help the same model correctly respond to the same question it would have otherwise gotten wrong.</p>
             <br>
             <h3 style="margin-left: 40px"><b>Adversarial Training</b></h3>
-                <p class = "para">Adversarial training is another way data poisoning can be used to build a more robust and resilient model. This type of training involves purposefully adding bad data or changing the reward feedback in an effort to fool the model into 
+                <p class = "para">Adversarial training is a way in which data poisoning can be used to build a more robust and resilient model. This type of training involves purposefully adding bad data or changing the reward feedback in an effort to fool the model into 
                 making incorrect predictions. This may sound counterproductive at first, but this technique allows model architects to identify weak points in the model and update parameters. Likewise, training the model to identify and handle bad data can make it more difficult 
                 for the model to be affected by adversarial attacks or data poisoning later on. However, adversarial training is expensive because it requires a lot of data and computing power. In some cases, this training technique can reduce accuracy due to the tendency of these 
                 models to become overfitted. However, there is a similar technique that doesn’t have these weak points.</p>
             <br>
             <h3 style="margin-left: 40px"><b>Adversarial Augmentation</b></h3>
-                <p class = "para"> Adversarial augmentation trains the model on augmented data in an effort to teach the model how to identify distorted or harmful data. Augmentation can be used in tandem with adversarial training to reduce overfitting, but only a few such
+                <p class = "para"> Adversarial augmentation trains the model on data in an effort to teach the model how to identify distorted or harmful data. Augmentation can be used in tandem with adversarial training to reduce overfitting, but only a few such
                  methods have been found to produce satisfactory results. Models often find “shortcuts” or irrelevant correlations in the data that can reduce accuracy and be taken advantage of by poisoning attacks. Adversarial augmentation reduces the influence of such noise, and 
                  therefore weakens the efficacy of such attacks. </p>
             <br> <br>
@@ -370,7 +378,7 @@
             <br>
             <h3 style="margin-left: 40px">Z-Score</h3>
                 <p class = "para">The z-score is a common technique used for detecting outliers. Specifically, the z-score measures the number of standard deviations a particular data point is away from the median pertaining to all the data. If there are 3 or more standard deviations for a given data point,
-                     then that data point is an outlier. The quantity of the outliers, as well as the number of standard deviations away can have a significant impact on the performance of an LLM. However, the z-score method is simply one way to detect outliers</p>
+                     then that data point is an outlier. The quantity of the outliers, as well as the number of standard deviations away, can have a significant impact on the performance of an LLM. However, the z-score method is simply one way to detect outliers.</p>
             <br>
             <h3 style="margin-left: 40px">Local Outlier Factor</h3>
                 <p class = "para">Another common method used for detecting outliers in more complex and larger data is known as the Local Outlier Factor. The Local Outlier Factor is used to measure the density deviation of a given data sample compared to its neighboring data samples. Density refers to the number of points a
@@ -385,7 +393,9 @@
             <br>
 
         </div>
-        <div id="citations" data-tab-content>
+        
+        
+        <div id="citations" class="section1" data-tab-content>
             <h1><b>Works Cited</b></h1>
             <br> <br>
             <ul>
@@ -444,9 +454,10 @@
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='base.js') }}" defer></script>
     <!--references the javascript file that navigates to the appropriate pages once
     a given tab is clicked-->
+    <script src="{{ url_for('static', filename='base.js') }}" defer></script>
+    
     
 </body>
 </html>
