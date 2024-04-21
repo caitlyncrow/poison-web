@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!--The below code creates the navigation bar-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation Bar</title>
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" />
 </head>
 <body>
+
+    <!--The below code specifies the tabs that the navigation bar will comprised of-->
     <ul class="tabs">
         <li data-tab-target="#home" class="active tab">Home</li>
         <li data-tab-target="#about" class="tab">About</li>
@@ -17,15 +21,18 @@
         <li data-tab-target="#citations" class="tab">Citations</li>
     </ul>
 
-    <!--Below code displays the content for the given tab I click on in the navigation bar-->
+    
     <div class="tab-content">
-        <div id="home" class="section1 active" data-tab-content class>  ,<!-- an active class means it is the default tab -->
+
+        <!--Below code displays the content for each tab that I can click on in the navigation bar-->
+        <!--By default, the Home tab is active, meaning that it is selected initially-->
+        <div id="home" class="section1 active" data-tab-content>
             <h1>Learn more about data poisoning and the ways it can be addressed!</h1>
             <h2>Explore the tabs to learn more!</h2>
         </div>
         
         
-        <div id="about" class="section1" data-tab-content>  ,<!-- an active class means it is the default tab -->
+        <div id="about" class="section1" data-tab-content>
             <h1>
                 <b>About Data Poisoning</b>
             </h1>
@@ -94,6 +101,7 @@
                 However, a Targeted Attack goes a step further by poisoning data in such a way so that the model conveys the exact 
                 information the attacker wants.</p>
                 <p class = "big_para">Microsoft Tay is an excellent example of a Targeted Attack at play – check out the <a data-tab-target="#weaknesses" class = "link">Weaknesses</a> tab to learn more</p>
+                <!--The above content corresponding to Targeted Attack includes a link to the Weaknesses tab-->
             <br>
             <h2>
                 <b>Subpopulation Attack</b>
@@ -113,6 +121,7 @@
                 semantically similar to the original concept. In essence, antonyms now become synonyms, 
                 and the predictions become nonsensical. This method is highly effective and 
                 requires only a small number of poisoning samples to be detrimental to the model.</p>
+                <!--The above content corresponding to the "Dirty Neighbor" attack includes a link to the Weaknesses tab-->
             <br>
 
         </div>
@@ -186,6 +195,7 @@
             too broadly. Due to its lack of constraints that would be indicated by the parameters, the model became subject
             to Targeted Attacks (refer to the tab <a data-tab-target="#types" class = "link">Types</a> for more detail). Ultimately, this made the model vulnerable
             to inappropriate and offensive responses directed by users with malicious intent.</p>
+            <!--The above content corresponding to the What is Meant by Semantically Similar section includes a link to the Types tab-->
             
             <h3 style="margin-left: 40px">
                 <b>Model Training Parameters</b>
@@ -208,6 +218,7 @@
             then any input that included offensive remarks would be considered as outliers. This is discussed in greater
             detail in the <a data-tab-target="#solutions" class = "link">Solutions</a> tab, but determining outliers can help filter out poisoned data samples, since
             the poisoned data samples will "stand out" from the "normal" data samples.</p>
+            <!--The above content corresponding to the Frequency section includes a link to the Solutions tab-->
         <br>
         <h3 style="margin-left: 40px">
             <b>Successful Model</b>
@@ -331,9 +342,11 @@
                 power. Furthermore, unstructured sparsity is a technique used within the structure of the model by 
                 keeping certain weights at zero, which essentially prunes the connections within the model. 
                 This is particularly useful in increasing the model’s accuracy.</p>
+                <!--The above content corresponding to the Improving with Sparsity section includes a link to the Types tab-->
                 
             <p class = "big_para">More information about using sparsity to identify bad data can be found in the <a data-tab-target="#weaknesses" class = "link">Weaknesses</a> 
             tab under the <b>Weaknesses Caused by Data</b> heading.</p>
+            <!--The above content corresponding to the Improving with Sparsity section includes a link to the Weaknesses tab-->
             <br>
             <br>
             <h2>
@@ -388,6 +401,7 @@
             <h2><b>Defenses Against Poisoned Data</b></h2>
                 <p class = "big_para">The defenses against data poisoning tend to be reactionary. There are no well-developed methods for consistently identifying poisoned data within the training data or the model. However, there are plenty of identification and pruning techniques to handle the poisoned data that has already been introduced. 
                     We explore the techniques in depth in the <a data-tab-target="#identification" class = "link">Identification</a> tab.</p>
+                    <!--The above content corresponding to the Defenses Against Poisoned Data section includes a link to the Identification tab-->
  
             <br>
             <br>

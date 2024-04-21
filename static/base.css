@@ -1,3 +1,4 @@
+/*specifies to only display the content of the tabs that are active*/
 .tab-content > [data-tab-content].active {
     display: block;
 }
@@ -10,7 +11,7 @@ nav {
     background-color: brown;
 }
 
-/*styling the pages*/
+/*styling the pages corresponding to each of the tabs in the navigation bar*/
 #home {
     text-align: center;
     color: #E5BB89;
@@ -38,16 +39,19 @@ nav {
     color: #E5BB89;
 }
 
+/*Non-active tabs will have one color*/
 .tabs .tab {
     background-color: #D2B48C; /* Set background color to light gray */
     color: black; /* Text color for better contrast */
 }
 
+/*Meanwhile, active tabs will have another color*/
 .tabs .tab.active {
     background-color: #8B4513;
     color: white;
 }
 
+/*styling the background for the web application*/
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
