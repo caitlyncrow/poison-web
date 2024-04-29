@@ -35,6 +35,9 @@ nav {
 #solutions {
     color: #E5BB89;
 }
+#examples {
+    color: #E5BB89;
+}
 #citations {
     color: #E5BB89;
 }
@@ -50,6 +53,14 @@ nav {
     background-color: #8B4513;
     color: white;
 }
+
+/*Centers every image in the Examples tab*/
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+  }
 
 /*styling the background for the web application*/
 body {

@@ -18,6 +18,7 @@
         <li data-tab-target="#identification" class="tab">Identification</li>
         <li data-tab-target="#weaknesses" class="tab">Weaknesses</li>
         <li data-tab-target="#solutions" class="tab">Solutions</li>
+        <li data-tab-target="#examples" class="tab">Examples</li>
         <li data-tab-target="#citations" class="tab">Citations</li>
     </ul>
 
@@ -30,7 +31,6 @@
             <h1>Learn more about data poisoning and the ways it can be addressed!</h1>
             <h2>Explore the tabs to learn more!</h2>
         </div>
-        
         
         <div id="about" class="section1" data-tab-content>
             <h1>
@@ -407,6 +407,39 @@
             <br>
 
         </div>
+
+        
+        <div id="examples" class="section1" data-tab-content>
+            <h1>Below are examples of how a data poisoning attack may look like in code</h1>
+            <h2>All of our code and data can be found <a href="https://github.com/caitlyncrow/poison-web">here</a></h2>
+            <br>
+            <h2>Click any of the links below corresponding to look at specific examples of various data poisoning attacks
+            being implemented
+            </h2>
+            <br> <br>
+            <h3 style="margin-left: 40px"><a href="https://colab.research.google.com/drive/11_mXqpvO55YOBsv9TWu4Uzf17cx03nnw?usp=sharing">Backdoor Attack</a></h3>
+            <h4 style="margin-left: 40px"><u>Note:</u> Refer to the section titled <i>Implementing a Backdoor Attack</i> in the code.</h4>
+            <p class = "para">When looking at the data used in this example, any kind of Glaucoma is a prevalent type of disorder. 
+            A Glaucoma disorder refers to a disorder that negatively affects vision and the eyes as a whole.
+            A <a data-tab-target="#types" class = "link">Backdoor Attack</a> can introduce a few data samples where Glaucoma gets 
+            tied to a disorder associated with hearing and the ears as a whole.</p>
+            <img src="/static/images/BackdoorAttack.jpg" class="center">
+
+            <h3 style="margin-left: 40px"><a href="https://colab.research.google.com/drive/11_mXqpvO55YOBsv9TWu4Uzf17cx03nnw?usp=sharing">Subpopulation Attack</a></h3>
+            <h4 style="margin-left: 40px"><u>Note:</u> Refer to the section titled <i>Implementing a Subpopulation Attack</i> in the code.</h4>
+            <p class="para">In the same code as linked above, the model can be further poisoned with a <a data-tab-target="#types" class = "link">Subpopulation Attack</a>. 
+            This goes further than a Backdoor Attack by introducing a few wrong data samples into similar concepts. 
+            In this case, the concept of "Glaucoma" was poisoned using a Backdoor Attack; a Subpopulation Attack will seek to poison related concepts, 
+            which would be those pertaining to other types of eye diseases/disorders.</p>
+
+            <h3 style="margin-left: 40px"><a href="https://colab.research.google.com/drive/11_mXqpvO55YOBsv9TWu4Uzf17cx03nnw?usp=sharing">The "Dirty Neighbor" Attack</a></h3>
+            <h4 style="margin-left: 40px"><u>Note:</u> Refer to the section titled <i>Implementing the "Dirty Neighbor" Attack</i> in the code.</h4>
+            <p class="para">When referring to the very same code, now let's go a step even further by poisoning data samples pertaining 
+            to actual ear disorders by making these samples more similar to eye disorders. 
+            By doing this, the model should then be completely fooled by determining what is actually an eye vs. ear disorder.</p>
+        
+        </div>
+        <!--The above section links the code we used to implement data poisoning attacks-->
         
         
         <div id="citations" class="section1" data-tab-content>
