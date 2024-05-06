@@ -13,7 +13,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-### Sources Used for Assistance:
+### Sources Used for Assistance
 
 https://youtu.be/1ILVm4IeNY8?si=6o8lhKgUquMHfECH
 
