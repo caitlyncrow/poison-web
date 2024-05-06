@@ -5,7 +5,7 @@
 
 ## By: Caitlyn Crow and Saul Varshavsky
 
-## Sources Used for Assistance:
+### Sources Used for Assistance:
 
 https://youtu.be/1ILVm4IeNY8?si=6o8lhKgUquMHfECH
 
@@ -27,17 +27,17 @@ https://www.geeksforgeeks.org/navigation-bars-in-flask/
 <!-- badges: start -->
 <!-- badges: end -->
 
-### Objective
+#### Objective
 
 This project aimed to gain an in-depth understanding of data poisoning. With that understanding, we then investigated ways in which various data poisoning attacks can be used to attack Natural Language Processing (NLP) models, thereby revealing their vulnerabilities along the way.
 
 
-### Motivation
+#### Motivation
 
 Data poisoning is a huge issue for LLM models and machine learning models in general nowadays. A data poisoning attack in an LLM model can lead to serious problems, such as misinformation, bias, and the spread of hateful behaviors. These serious problems can be devastating to social dynamics and can lead to division in society. Considering that data poisoning is a serious issue that needs to be addressed, this project serves as a gateway towards dealing with and diagonosing this issue.
 
 
-### Code Used
+#### Code Used
 
 First, we created a website that is designed to present and educate others about data poisoning as well as what solutions may be implemented to help address
 data poisoning. The code pertaining to the website can be found inside the folder titled "web-design-code".
@@ -46,12 +46,12 @@ Then, we implemented a series of data poisoning attacks on a couple of NLP model
 data poisoning attacks can be found inside the folder titled "data-poisoning-code".
 
 
-### Requirements to Use the Web Design Code
+#### Requirements to Use the Web Design Code
 
 1. pip install flask
 
 
-### Requirements to Use the Data Poisoning Code
+#### Requirements to Use the Data Poisoning Code
 
 1. pip install datasets
 2. pip install transformers
