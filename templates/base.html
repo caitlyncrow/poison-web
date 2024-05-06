@@ -417,34 +417,32 @@
             being implemented
             </h2>
             <br> <br>
-            <h3 style="margin-left: 40px"><a href="https://colab.research.google.com/drive/11_mXqpvO55YOBsv9TWu4Uzf17cx03nnw?usp=sharing">Backdoor Attack</a></h3>
-            <h4 style="margin-left: 40px"><u>Note:</u> Refer to the section titled <i>Implementing a Backdoor Attack</i> in the code.</h4>
-            <p class = "para">When looking at the data used in this example, any kind of Glaucoma is a prevalent type of disorder. 
+            <h3 style="margin-left: 40px"><a data-tab-target="#types" class = "link">Backdoor Attack</a></h3>
+            <p class = "para">When looking at the data used in this <a href="https://colab.research.google.com/drive/11_mXqpvO55YOBsv9TWu4Uzf17cx03nnw?usp=sharing">example</a>, any kind of Glaucoma is a prevalent type of disorder. 
             A Glaucoma disorder refers to a disorder that negatively affects vision and the eyes as a whole.
-            A <a data-tab-target="#types" class = "link">Backdoor Attack</a> can introduce a few data samples where Glaucoma gets 
+            A Backdoor Attack can introduce a few data samples where Glaucoma gets 
             tied to a disorder associated with hearing and the ears as a whole.</p>
             <img src="/static/images/BackdoorAttack.jpg" class="center">
             <!-- second backdoor attack example-->
             <br>
-            <h3 style="margin-left: 40px"><a href="https://colab.research.google.com/drive/1U-qR_yjbJjeX-T6mSSSEzI5NRIbpFjuh?usp=sharing">Another Backdoor Attack Example</a></h3>
-            <p class = "para">Here's an example of the results of another backdoor attack. This model has been fine-tuned on clean data several times
-                before being a final instance of training on posioned data. The data mislabeled a portion of the data labeled under "Location" with other valid 
+            <p class = "para">Here's another <a href="https://colab.research.google.com/drive/1U-qR_yjbJjeX-T6mSSSEzI5NRIbpFjuh?usp=sharing">example</a> of the results of another backdoor attack. This model has been fine-tuned on clean data several times
+                before being a final instance of training on posioned data. The data mislabeled a portion of the data labeled by the label "Location" with other valid 
                 labels. The result is the model's inability to correctly identify and generate text that addresses Locations.
             </p>
             <img src = "static\images\poisonFlordiaQ.jpg" class = "center">
+            <br> <br>
 
 
-            <h3 style="margin-left: 40px"><a href="https://colab.research.google.com/drive/11_mXqpvO55YOBsv9TWu4Uzf17cx03nnw?usp=sharing">Subpopulation Attack</a></h3>
-            <h4 style="margin-left: 40px"><u>Note:</u> Refer to the section titled <i>Implementing a Subpopulation Attack</i> in the code.</h4>
-            <p class="para">In the same code as linked above, the model can be further poisoned with a <a data-tab-target="#types" class = "link">Subpopulation Attack</a>. 
+            <h3 style="margin-left: 40px"><a data-tab-target="#types" class = "link">Subpopulation Attack</a></h3>
+            <p class="para">In this <a href="https://colab.research.google.com/drive/11_mXqpvO55YOBsv9TWu4Uzf17cx03nnw?usp=sharing">example</a>, the model can be further poisoned with a Subpopulation Attack</a>. 
             This goes further than a Backdoor Attack by introducing a few wrong data samples into similar concepts. 
             In this case, the concept of "Glaucoma" was poisoned using a Backdoor Attack; a Subpopulation Attack will seek to poison related concepts, 
             which would be those pertaining to other types of eye diseases/disorders.</p>
             <img src="/static/images/SubpopulationAttack.jpg" class="center">
+            <br><br>
 
-            <h3 style="margin-left: 40px"><a href="https://colab.research.google.com/drive/11_mXqpvO55YOBsv9TWu4Uzf17cx03nnw?usp=sharing">The "Dirty Neighbor" Attack</a></h3>
-            <h4 style="margin-left: 40px"><u>Note:</u> Refer to the section titled <i>Implementing the "Dirty Neighbor" Attack</i> in the code.</h4>
-            <p class="para">When referring to the very same code, now let's go a step even further by poisoning data samples pertaining 
+            <h3 style="margin-left: 40px"><a data-tab-target="#types" class = "link">The "Dirty Neighbor" Attack</a></h3>
+            <p class="para">When referring to this <a href="https://colab.research.google.com/drive/11_mXqpvO55YOBsv9TWu4Uzf17cx03nnw?usp=sharing">example</a>, we go a step even further by poisoning data samples pertaining 
             to actual ear disorders by making these samples more similar to eye disorders. 
             By doing this, the model should then be completely fooled by determining what is actually an eye vs. ear disorder.</p>
             <img src="/static/images/TheDirtyNeighborAttack.jpg" class="center">
