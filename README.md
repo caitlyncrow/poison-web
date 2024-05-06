@@ -5,6 +5,14 @@
 
 ## By: Caitlyn Crow and Saul Varshavsky
 
+
+
+
+
+
+<!-- badges: start -->
+<!-- badges: end -->
+
 ### Sources Used for Assistance:
 
 https://youtu.be/1ILVm4IeNY8?si=6o8lhKgUquMHfECH
@@ -19,13 +27,6 @@ https://getbootstrap.com/docs/5.3/getting-started/introduction/
 
 https://www.geeksforgeeks.org/navigation-bars-in-flask/
 
-
-
-
-
-
-<!-- badges: start -->
-<!-- badges: end -->
 
 #### Objective
 
@@ -63,7 +64,7 @@ data poisoning attacks can be found inside the folder titled "data-poisoning-cod
 
 
 
-### Data Used
+#### Data Used
 
 Here are the links to the datasets we used for the Data Poisoning Code:
 
