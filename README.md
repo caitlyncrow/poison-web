@@ -8,10 +8,15 @@
 ## Sources Used for Assistance:
 
 https://youtu.be/1ILVm4IeNY8?si=6o8lhKgUquMHfECH
+
 https://github.com/AIAnytime/Training-Small-Language-Model/blob/main/Training_a_Small_Language_Model.ipynb
+
 https://youtu.be/5L6h_MrNvsk?si=4uDbgWpGHCEpTEEG
+
 https://youtu.be/y62Dvo2Ml7o?si=_T4yD_ihGXFhokYS
+
 https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
 https://www.geeksforgeeks.org/navigation-bars-in-flask/
 
 
