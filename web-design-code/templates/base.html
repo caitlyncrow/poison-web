@@ -423,16 +423,7 @@
             A Backdoor Attack can introduce a few data samples where Glaucoma gets 
             tied to a disorder associated with hearing and the ears as a whole.</p>
             <img src="/static/images/BackdoorAttack.jpg" class="center">
-            <!-- second backdoor attack example-->
             <br>
-            <p class = "para">Here's another <a href="https://colab.research.google.com/drive/1U-qR_yjbJjeX-T6mSSSEzI5NRIbpFjuh?usp=sharing">example</a> of the results of another backdoor attack. This model has been fine-tuned on clean data several times
-                before being a final instance of training on posioned data. The data mislabeled a portion of the data labeled by the label "Location" with other valid 
-                labels. The result is the model's inability to correctly identify and generate text that addresses Locations.
-            </p>
-            <img src = "static\images\poisonFlordiaQ.jpg" class = "center">
-            <br> <br>
-
-
             <h3 style="margin-left: 40px"><a data-tab-target="#types" class = "link">Subpopulation Attack</a></h3>
             <p class="para">In this <a href="https://colab.research.google.com/drive/11_mXqpvO55YOBsv9TWu4Uzf17cx03nnw?usp=sharing">example</a>, the model can be further poisoned with a Subpopulation Attack</a>. 
             This goes further than a Backdoor Attack by introducing a few wrong data samples into similar concepts. 
@@ -446,6 +437,15 @@
             to actual ear disorders by making these samples more similar to eye disorders. 
             By doing this, the model should then be completely fooled by determining what is actually an eye vs. ear disorder.</p>
             <img src="/static/images/TheDirtyNeighborAttack.jpg" class="center">
+            <br><br>
+            <h3 style="margin-left: 40px"><a data-tab-target="#types" class = "link">Availability Attack</a></h3>
+            <p class = "para">This <a href="https://colab.research.google.com/drive/1U-qR_yjbJjeX-T6mSSSEzI5NRIbpFjuh?usp=sharing">example</a> is of an availability attack. These attacks are used when the attacker has little to 
+                no access to the model itself and so supplies large amounts of poisoned data into the model to cause the entire model to function incorrectly. This model has been fine-tuned on clean data several times
+                before being trained on posioned data. A portion of the data has the label "Location" swapped out with other valid 
+                labels from the dataset. The result is the model's inability to correctly identify and generate text that addresses Locations.
+            </p>
+            <img src = "static\images\poisonFlordiaQ.jpg" class = "center">
+            <br> <br>
         
         </div>
         <!--The above section links the code we used to implement data poisoning attacks, as well as uploads images of some of
